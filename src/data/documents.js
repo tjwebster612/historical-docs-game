@@ -66,7 +66,7 @@ export const documents = [
     country: 'United States',
     theme: 'Foreign Policy',
     category: 'history',
-    fullText: `The American continents, by the free and independent condition which they have assumed and maintain, are henceforth not to be considered as subjects for future colonization by any European powers.`,
+    textFile: 'monroe.txt',
     funFacts: [
       'The Monroe Doctrine became a cornerstone of U.S. foreign policy.',
       'It was delivered by President James Monroe in 1823.',
@@ -126,7 +126,7 @@ export const documents = [
     country: 'United States',
     theme: 'Women’s Rights',
     category: 'history',
-    fullText: `We hold these truths to be self-evident: that all men and women are created equal; that they are endowed by their Creator with certain inalienable rights...`,
+    textFile: 'senecafalls.txt',
     funFacts: [
       'This document was signed at the first women’s rights convention in Seneca Falls, NY.',
       'It was modeled after the Declaration of Independence.',
@@ -141,7 +141,7 @@ export const documents = [
     country: 'United States',
     theme: 'Civil Rights',
     category: 'history',
-    fullText: `I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.`,
+    textFile: 'ihaveadream.txt',
     funFacts: [
       'Martin Luther King Jr. delivered this speech during the March on Washington.',
       'It was delivered on August 28, 1963, at the Lincoln Memorial.',
