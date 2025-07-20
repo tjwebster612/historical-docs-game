@@ -78,10 +78,10 @@ export default function Home({ onStart }) {
   return (
     <div className="card" style={{ maxWidth: 600, margin: '0 auto' }}>
       <div className="app-header">
-        <h1 className="app-title">Welcome!</h1>
+        <h1 className="app-title">Welcome to Archivist Academy!</h1>
         <p className="app-subtitle">
-          Test your knowledge of history and classic literature.<br />
-          Choose a mode to begin.
+          Master the art of document identification.<br />
+          Test your knowledge of history and classic literature.
         </p>
       </div>
       

@@ -5,7 +5,7 @@ import Results from './components/Results.jsx';
 import DocumentLibrary from './components/DocumentLibrary.jsx';
 import './App.css';
 
-const APP_TITLE = 'Historical Docs & Lit Game';
+const APP_TITLE = 'Archivist Academy';
 
 export default function App() {
   const [screen, setScreen] = useState('home');

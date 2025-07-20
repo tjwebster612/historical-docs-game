@@ -49,7 +49,7 @@ const DocumentLibrary = ({ onBack }) => {
     <div className="library-container" style={{ display: 'flex', minHeight: 600 }}>
       {/* Left pane: categories and document list */}
       <div className="library-sidebar" style={{ width: 340, borderRight: '1px solid #e1e8ed', padding: '2rem 1.5rem 2rem 2rem', background: '#f8f9fa' }}>
-        <h2 style={{ marginTop: 0, color: '#2c3e50' }}>Document Library</h2>
+        <h2 style={{ marginTop: 0, color: '#2c3e50' }}>Archivist's Library</h2>
         {Object.entries(docsByCategory).map(([cat, docs]) => (
           <div key={cat} style={{ marginBottom: '2rem' }}>
             <h3 style={{ marginBottom: '1rem', color: '#2c3e50', fontSize: '1.1rem', fontWeight: '600' }}>{CATEGORY_LABELS[cat] || cat}</h3>
@@ -83,10 +83,10 @@ const DocumentLibrary = ({ onBack }) => {
             <button onClick={() => setOpenDoc(null)} style={{ marginTop: '1.5rem' }}>Close Document</button>
           </div>
         ) : (
-          <div style={{ color: '#6c757d', fontSize: '1.1rem', textAlign: 'center', marginTop: '6rem', padding: '2rem' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.3 }}>📚</div>
-            Select a document on the left to view its full text.
-          </div>
+                      <div style={{ color: '#6c757d', fontSize: '1.1rem', textAlign: 'center', marginTop: '6rem', padding: '2rem' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.3 }}>🏛️</div>
+              Select a document from the Archivist's Library to view its full text.
+            </div>
         )}
       </div>
     </div>
