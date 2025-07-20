@@ -288,5 +288,125 @@ export const documents = [
       'First published in 1890.',
       'A story about vanity, moral duplicity, and the pursuit of pleasure.'
     ]
+  },
+  {
+    id: 'washingtonfarewell',
+    title: 'Washington\'s Farewell Address',
+    year: 1796,
+    country: 'United States',
+    theme: 'Presidential Speeches',
+    category: 'history',
+    textFile: 'washingtonfarewell.txt',
+    funFacts: [
+      'Washington delivered this address as he prepared to leave office.',
+      'It was published in newspapers rather than delivered as a speech.',
+      'It warned against political parties and foreign entanglements.',
+      'It emphasized the importance of national unity and the Constitution.'
+    ]
+  },
+  {
+    id: 'jeffersoninaugural',
+    title: 'Jefferson\'s First Inaugural Address',
+    year: 1801,
+    country: 'United States',
+    theme: 'Presidential Speeches',
+    category: 'history',
+    textFile: 'jeffersoninaugural.txt',
+    funFacts: [
+      'Jefferson was the first president inaugurated in Washington, D.C.',
+      'He famously said "We are all Republicans, we are all Federalists."',
+      'It emphasized unity after a bitter election.',
+      'It outlined his vision of limited government and individual liberty.'
+    ]
+  },
+  {
+    id: 'jacksonbankveto',
+    title: 'Jackson\'s Bank Veto Message',
+    year: 1832,
+    country: 'United States',
+    theme: 'Economic Policy',
+    category: 'history',
+    textFile: 'jacksonbankveto.txt',
+    funFacts: [
+      'Jackson vetoed the recharter of the Second Bank of the United States.',
+      'It was a major victory for populism over financial elites.',
+      'The veto message was widely distributed as campaign literature.',
+      'It helped establish the principle of presidential veto power.'
+    ]
+  },
+  {
+    id: 'lincolnfirstinaugural',
+    title: 'Lincoln\'s First Inaugural Address',
+    year: 1861,
+    country: 'United States',
+    theme: 'Civil War',
+    category: 'history',
+    textFile: 'lincolnfirstinaugural.txt',
+    funFacts: [
+      'Lincoln delivered this address as the Civil War was beginning.',
+      'He appealed to "the mystic chords of memory" to preserve the Union.',
+      'It was delivered from the East Portico of the Capitol.',
+      'Lincoln sought to reassure the South while defending the Union.'
+    ]
+  },
+  {
+    id: 'fdrfirstinaugural',
+    title: 'FDR\'s First Inaugural Address',
+    year: 1933,
+    country: 'United States',
+    theme: 'Great Depression',
+    category: 'history',
+    textFile: 'fdrfirstinaugural.txt',
+    funFacts: [
+      'FDR famously said "the only thing we have to fear is fear itself."',
+      'It was delivered during the depths of the Great Depression.',
+      'It outlined the New Deal approach to economic recovery.',
+      'It marked a dramatic shift in the role of the federal government.'
+    ]
+  },
+  {
+    id: 'wilsonfourteenpoints',
+    title: 'Wilson\'s Fourteen Points',
+    year: 1918,
+    country: 'United States',
+    theme: 'World War I',
+    category: 'history',
+    textFile: 'wilsonfourteenpoints.txt',
+    funFacts: [
+      'Wilson outlined his vision for post-war peace.',
+      'It called for the creation of the League of Nations.',
+      'It emphasized self-determination for nations.',
+      'It influenced the Treaty of Versailles negotiations.'
+    ]
+  },
+  {
+    id: 'kennedyinaugural',
+    title: 'Kennedy\'s Inaugural Address',
+    year: 1961,
+    country: 'United States',
+    theme: 'Cold War',
+    category: 'history',
+    textFile: 'kennedyinaugural.txt',
+    funFacts: [
+      'Kennedy famously said "ask not what your country can do for you."',
+      'It was delivered during the height of the Cold War.',
+      'It called for a new generation of American leadership.',
+      'It emphasized global cooperation and freedom.'
+    ]
+  },
+  {
+    id: 'reaganberlinwall',
+    title: 'Reagan\'s "Tear Down This Wall" Speech',
+    year: 1987,
+    country: 'United States',
+    theme: 'Cold War',
+    category: 'history',
+    textFile: 'reaganberlinwall.txt',
+    funFacts: [
+      'Reagan delivered this speech at the Brandenburg Gate.',
+      'He famously challenged Gorbachev to "tear down this wall."',
+      'It was delivered just two years before the wall fell.',
+      'It symbolized the end of the Cold War era.'
+    ]
   }
 ]; 
