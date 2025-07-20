@@ -150,87 +150,48 @@ export const documents = [
     ]
   },
   {
-    id: 'prideprejudice',
-    title: 'Pride and Prejudice',
-    year: 1813,
-    country: 'United Kingdom',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'prideprejudice.txt',
+    id: 'greatgatsby',
+    title: 'The Great Gatsby',
+    year: 1925,
+    country: 'United States',
+    theme: 'American Literature',
+    category: 'literature',
+    textFile: 'greatgatsby.txt',
     funFacts: [
-      'Written by Jane Austen.',
-      'First published in 1813.',
-      'The opening line is one of the most famous in English literature.'
+      'F. Scott Fitzgerald wrote this during the Jazz Age.',
+      'It explores themes of the American Dream and social class.',
+      'The novel was not initially successful but became a classic.',
+      'It captures the spirit of the Roaring Twenties.'
+    ]
+  },
+  {
+    id: '1984',
+    title: '1984',
+    year: 1949,
+    country: 'United Kingdom',
+    theme: 'Dystopian Fiction',
+    category: 'literature',
+    textFile: '1984.txt',
+    funFacts: [
+      'George Orwell wrote this as a warning about totalitarianism.',
+      'The term "Big Brother" comes from this novel.',
+      'It introduced concepts like "thoughtcrime" and "doublethink."',
+      'The novel was influenced by Orwell\'s experiences with totalitarian regimes.'
     ]
   },
   {
     id: 'mobydick',
-    title: 'Moby-Dick',
+    title: 'Moby Dick',
     year: 1851,
     country: 'United States',
-    theme: 'Classic Literature',
-    category: 'classic literature',
+    theme: 'American Literature',
+    category: 'literature',
     textFile: 'mobydick.txt',
     funFacts: [
-      'Written by Herman Melville.',
-      'First published in 1851.',
-      'The story is about the quest for the white whale, Moby Dick.'
-    ]
-  },
-  {
-    id: 'huckfinn',
-    title: 'Adventures of Huckleberry Finn',
-    year: 1884,
-    country: 'United States',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'huckfinn.txt',
-    funFacts: [
-      'Written by Mark Twain.',
-      'First published in 1884.',
-      'Often called the "Great American Novel."'
-    ]
-  },
-  {
-    id: 'greatexpectations',
-    title: 'Great Expectations',
-    year: 1861,
-    country: 'United Kingdom',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'greatexpectations.txt',
-    funFacts: [
-      'Written by Charles Dickens.',
-      'First published in 1861.',
-      'The story follows the orphan Pip and his growth and development.'
-    ]
-  },
-  {
-    id: 'janeeyre',
-    title: 'Jane Eyre',
-    year: 1847,
-    country: 'United Kingdom',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'janeeyre.txt',
-    funFacts: [
-      'Written by Charlotte Brontë.',
-      'First published in 1847.',
-      'A pioneering work in the genre of the novel of development (Bildungsroman).'
-    ]
-  },
-  {
-    id: 'dracula',
-    title: 'Dracula',
-    year: 1897,
-    country: 'United Kingdom',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'dracula.txt',
-    funFacts: [
-      'Written by Bram Stoker.',
-      'First published in 1897.',
-      'Popularized the modern image of the vampire.'
+      'Herman Melville\'s masterpiece was not popular during his lifetime.',
+      'It opens with the famous line "Call me Ishmael."',
+      'The novel explores themes of obsession and the human condition.',
+      'It is considered one of the greatest American novels.'
     ]
   },
   {
@@ -238,55 +199,134 @@ export const documents = [
     title: 'Frankenstein',
     year: 1818,
     country: 'United Kingdom',
-    theme: 'Classic Literature',
-    category: 'classic literature',
+    theme: 'Gothic Fiction',
+    category: 'literature',
     textFile: 'frankenstein.txt',
     funFacts: [
-      'Written by Mary Shelley.',
-      'First published in 1818.',
-      'Considered one of the earliest science fiction novels.'
+      'Mary Shelley wrote this when she was only 18 years old.',
+      'It was inspired by a ghost story competition with friends.',
+      'The novel explores themes of scientific responsibility.',
+      'It is considered the first science fiction novel.'
     ]
   },
   {
-    id: 'wutheringheights',
-    title: 'Wuthering Heights',
+    id: 'janeeyre',
+    title: 'Jane Eyre',
     year: 1847,
     country: 'United Kingdom',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'wutheringheights.txt',
+    theme: 'Victorian Literature',
+    category: 'literature',
+    textFile: 'janeeyre.txt',
     funFacts: [
-      'Written by Emily Brontë.',
-      'First published in 1847.',
-      'A classic tale of passion and revenge on the Yorkshire moors.'
+      'Charlotte Brontë published this under the pen name Currer Bell.',
+      'It was revolutionary for its time in portraying a strong female protagonist.',
+      'The novel explores themes of love, independence, and social class.',
+      'It is considered a classic of English literature.'
     ]
   },
   {
-    id: 'scarletletter',
-    title: 'The Scarlet Letter',
-    year: 1850,
+    id: 'huckleberryfinn',
+    title: 'The Adventures of Huckleberry Finn',
+    year: 1885,
     country: 'United States',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'scarletletter.txt',
+    theme: 'American Literature',
+    category: 'literature',
+    textFile: 'huckleberryfinn.txt',
     funFacts: [
-      'Written by Nathaniel Hawthorne.',
-      'First published in 1850.',
-      'Explores themes of legalism, sin, and guilt in Puritan New England.'
+      'Mark Twain\'s masterpiece was controversial for its use of dialect.',
+      'Ernest Hemingway called it "the best book we\'ve had."',
+      'It explores themes of race, freedom, and American society.',
+      'The novel is narrated by Huck Finn in his own voice.'
     ]
   },
   {
-    id: 'doriangray',
-    title: 'The Picture of Dorian Gray',
-    year: 1890,
+    id: 'taleoftwocities',
+    title: 'A Tale of Two Cities',
+    year: 1859,
     country: 'United Kingdom',
-    theme: 'Classic Literature',
-    category: 'classic literature',
-    textFile: 'doriangray.txt',
+    theme: 'Historical Fiction',
+    category: 'literature',
+    textFile: 'taleoftwocities.txt',
     funFacts: [
-      'Written by Oscar Wilde.',
-      'First published in 1890.',
-      'A story about vanity, moral duplicity, and the pursuit of pleasure.'
+      'Charles Dickens\' novel opens with "It was the best of times."',
+      'It is set during the French Revolution.',
+      'The novel explores themes of sacrifice and redemption.',
+      'It is one of Dickens\' most popular works.'
+    ]
+  },
+  {
+    id: 'prideprejudice',
+    title: 'Pride and Prejudice',
+    year: 1813,
+    country: 'United Kingdom',
+    theme: 'Romance',
+    category: 'literature',
+    textFile: 'prideprejudice.txt',
+    funFacts: [
+      'Jane Austen\'s most famous novel opens with a famous line about marriage.',
+      'It explores themes of love, marriage, and social class.',
+      'The novel features the iconic characters Elizabeth Bennet and Mr. Darcy.',
+      'It is considered a masterpiece of English literature.'
+    ]
+  },
+  {
+    id: 'alice',
+    title: 'Alice\'s Adventures in Wonderland',
+    year: 1865,
+    country: 'United Kingdom',
+    theme: 'Children\'s Literature',
+    category: 'literature',
+    textFile: 'alice.txt',
+    funFacts: [
+      'Lewis Carroll wrote this for Alice Liddell, the daughter of a friend.',
+      'The novel is filled with wordplay and mathematical references.',
+      'It has been adapted into numerous films and stage productions.',
+      'The story explores themes of logic, identity, and growing up.'
+    ]
+  },
+  {
+    id: 'dracula',
+    title: 'Dracula',
+    year: 1897,
+    country: 'United Kingdom',
+    theme: 'Gothic Horror',
+    category: 'literature',
+    textFile: 'dracula.txt',
+    funFacts: [
+      'Bram Stoker\'s novel established the modern vampire myth.',
+      'It is written in epistolary form (letters and diary entries).',
+      'The novel explores themes of good versus evil and Victorian sexuality.',
+      'Count Dracula has become one of literature\'s most iconic characters.'
+    ]
+  },
+  {
+    id: 'sherlock',
+    title: 'The Adventures of Sherlock Holmes',
+    year: 1892,
+    country: 'United Kingdom',
+    theme: 'Detective Fiction',
+    category: 'literature',
+    textFile: 'sherlock.txt',
+    funFacts: [
+      'Arthur Conan Doyle created the world\'s most famous detective.',
+      'Sherlock Holmes uses deductive reasoning to solve crimes.',
+      'The character has appeared in countless adaptations.',
+      'The stories are narrated by Dr. John Watson.'
+    ]
+  },
+  {
+    id: 'treasureisland',
+    title: 'Treasure Island',
+    year: 1883,
+    country: 'United Kingdom',
+    theme: 'Adventure',
+    category: 'literature',
+    textFile: 'treasureisland.txt',
+    funFacts: [
+      'Robert Louis Stevenson wrote this for his stepson.',
+      'It introduced many pirate tropes still used today.',
+      'Long John Silver is one of literature\'s most complex villains.',
+      'The novel popularized the treasure map and "X marks the spot."'
     ]
   },
   {
