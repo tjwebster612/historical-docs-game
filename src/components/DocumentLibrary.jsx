@@ -48,36 +48,43 @@ const DocumentLibrary = ({ onBack }) => {
   return (
     <div className="library-container" style={{ display: 'flex', minHeight: 600 }}>
       {/* Left pane: categories and document list */}
-      <div className="library-sidebar" style={{ width: 340, borderRight: '1px solid #eee', padding: '2em 1.5em 2em 2em', background: '#fafbfc' }}>
-        <h2 style={{ marginTop: 0 }}>Document Library</h2>
+      <div className="library-sidebar" style={{ width: 340, borderRight: '1px solid #e1e8ed', padding: '2rem 1.5rem 2rem 2rem', background: '#f8f9fa' }}>
+        <h2 style={{ marginTop: 0, color: '#2c3e50' }}>Document Library</h2>
         {Object.entries(docsByCategory).map(([cat, docs]) => (
-          <div key={cat} style={{ marginBottom: '2em' }}>
-            <h3 style={{ marginBottom: 8 }}>{CATEGORY_LABELS[cat] || cat}</h3>
+          <div key={cat} style={{ marginBottom: '2rem' }}>
+            <h3 style={{ marginBottom: '1rem', color: '#2c3e50', fontSize: '1.1rem', fontWeight: '600' }}>{CATEGORY_LABELS[cat] || cat}</h3>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {docs.map(doc => (
-                <li key={doc.id} className="document-item" style={{ marginBottom: '1.2em', cursor: 'pointer', background: openDoc && openDoc.id === doc.id ? '#e6f0fa' : undefined, borderRadius: 6, padding: '0.5em 0.5em 0.5em 0.5em' }} onClick={() => handleOpen(doc)}>
-                  <div style={{ fontWeight: 600 }}>{doc.title} <span style={{ color: '#888', fontWeight: 400 }}>({doc.year})</span></div>
-                  <div style={{ fontSize: '0.95em', color: '#666' }}>{doc.theme}</div>
-                  <div style={{ fontSize: '0.92em', color: '#aaa' }}>{getRandomFact(doc.funFacts)}</div>
+                <li key={doc.id} className="document-item" onClick={() => handleOpen(doc)}>
+                  <div style={{ fontWeight: '600', color: '#2c3e50', marginBottom: '0.5rem' }}>{doc.title} <span style={{ color: '#6c757d', fontWeight: '400' }}>({doc.year})</span></div>
+                  <div style={{ fontSize: '0.9rem', color: '#495057', marginBottom: '0.25rem' }}>{doc.theme}</div>
+                  <div style={{ fontSize: '0.85rem', color: '#6c757d', fontStyle: 'italic' }}>{getRandomFact(doc.funFacts)}</div>
                 </li>
               ))}
             </ul>
           </div>
         ))}
-        <button onClick={onBack} style={{ marginTop: '2em' }}>Back to Home</button>
+        <button onClick={onBack} className="primary" style={{ width: '100%', marginTop: '2rem' }}>Back to Home</button>
       </div>
       {/* Right pane: document text */}
-      <div className="library-content" style={{ flex: 1, padding: '2em', minWidth: 0 }}>
+      <div className="library-content" style={{ flex: 1, padding: '2rem', minWidth: 0 }}>
         {openDoc ? (
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
-            <h2>{openDoc.title}</h2>
-            <div className="document-text" style={{ fontSize: '0.95em', whiteSpace: 'pre-wrap', maxHeight: 500, overflowY: 'auto', border: '1px solid #ddd', padding: '1em', background: '#fff', borderRadius: 8 }}>
-              {loading ? 'Loading...' : error ? error : docText}
+            <h2 style={{ color: '#2c3e50', marginBottom: '1.5rem' }}>{openDoc.title}</h2>
+            <div className="document-text" style={{ fontSize: '0.95rem', lineHeight: '1.6', whiteSpace: 'pre-wrap', maxHeight: 500, overflowY: 'auto', border: '1px solid #e1e8ed', padding: '1.5rem', background: '#ffffff', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)' }}>
+              {loading ? (
+                <div style={{ textAlign: 'center', color: '#6c757d', padding: '2rem' }}>Loading document...</div>
+              ) : error ? (
+                <div style={{ color: '#e74c3c', padding: '1rem' }}>{error}</div>
+              ) : (
+                docText
+              )}
             </div>
-            <button onClick={() => setOpenDoc(null)} style={{ marginTop: '1em' }}>Close</button>
+            <button onClick={() => setOpenDoc(null)} style={{ marginTop: '1.5rem' }}>Close Document</button>
           </div>
         ) : (
-          <div style={{ color: '#888', fontSize: '1.1em', textAlign: 'center', marginTop: '6em' }}>
+          <div style={{ color: '#6c757d', fontSize: '1.1rem', textAlign: 'center', marginTop: '6rem', padding: '2rem' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.3 }}>📚</div>
             Select a document on the left to view its full text.
           </div>
         )}

@@ -76,25 +76,67 @@ export default function Home({ onStart }) {
   };
 
   return (
-    <div style={{ maxWidth: 520, margin: '2em auto', background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px #3366cc18', padding: '2.5em 2em 2em 2em', border: '1.5px solid #e0e6ed' }}>
-      <h1 style={{ textAlign: 'center', color: '#3366cc', fontWeight: 800, fontSize: 32, marginBottom: 8 }}>Welcome!</h1>
-      <div style={{ textAlign: 'center', color: '#888', fontSize: 18, marginBottom: 32 }}>
-        Test your knowledge of history and classic literature.<br />Choose a mode to begin.
+    <div className="card" style={{ maxWidth: 600, margin: '0 auto' }}>
+      <div className="app-header">
+        <h1 className="app-title">Welcome!</h1>
+        <p className="app-subtitle">
+          Test your knowledge of history and classic literature.<br />
+          Choose a mode to begin.
+        </p>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginBottom: 24 }}>
-        <button onClick={() => setMode('single')} style={modeBtnStyle(mode === 'single')}>Single Player</button>
-        <button onClick={() => setMode('multi')} style={modeBtnStyle(mode === 'multi')}>Multiplayer</button>
+      
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
+        <button 
+          onClick={() => setMode('single')} 
+          className={mode === 'single' ? 'primary' : ''}
+          style={{ minWidth: '140px' }}
+        >
+          Single Player
+        </button>
+        <button 
+          onClick={() => setMode('multi')} 
+          className={mode === 'multi' ? 'primary' : ''}
+          style={{ minWidth: '140px' }}
+        >
+          Multiplayer
+        </button>
       </div>
-      <div style={{ marginBottom: 18 }}>
-        <label style={{ fontWeight: 600, color: '#3366cc' }}>Difficulty:</label>
-        <select value={difficulty} onChange={e => setDifficulty(e.target.value)} style={{ marginLeft: 8, fontSize: 16, borderRadius: 6, border: '1.5px solid #c3d3ee', padding: '0.3em 0.7em' }}>
+      
+      <div style={{ marginBottom: '1.5rem' }}>
+        <label style={{ fontWeight: '600', color: '#2c3e50', display: 'block', marginBottom: '0.5rem' }}>Difficulty:</label>
+        <select 
+          value={difficulty} 
+          onChange={e => setDifficulty(e.target.value)} 
+          style={{ 
+            width: '100%', 
+            fontSize: '1rem', 
+            borderRadius: '8px', 
+            border: '1px solid #e1e8ed', 
+            padding: '0.75rem 1rem',
+            background: '#ffffff',
+            color: '#2c3e50'
+          }}
+        >
           <option value="easy">Easy (Paragraph)</option>
           <option value="hard">Hard (Sentence)</option>
         </select>
       </div>
-      <div style={{ margin: '1em 0' }}>
-        <label style={{ fontWeight: 600, color: '#3366cc' }}>Choose a category:</label>
-        <select value={category} onChange={e => setCategory(e.target.value)} style={{ marginLeft: 8, fontSize: 16, borderRadius: 6, border: '1.5px solid #c3d3ee', padding: '0.3em 0.7em' }}>
+      
+      <div style={{ marginBottom: '2rem' }}>
+        <label style={{ fontWeight: '600', color: '#2c3e50', display: 'block', marginBottom: '0.5rem' }}>Choose a category:</label>
+        <select 
+          value={category} 
+          onChange={e => setCategory(e.target.value)} 
+          style={{ 
+            width: '100%', 
+            fontSize: '1rem', 
+            borderRadius: '8px', 
+            border: '1px solid #e1e8ed', 
+            padding: '0.75rem 1rem',
+            background: '#ffffff',
+            color: '#2c3e50'
+          }}
+        >
           {CATEGORIES.map(cat => (
             <option key={cat.value} value={cat.value}>{cat.label}</option>
           ))}

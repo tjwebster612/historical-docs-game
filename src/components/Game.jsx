@@ -256,6 +256,18 @@ const Game = ({ onEnd, difficulty = 'easy', playerInfo, mode, category = 'histor
 
   return (
     <div className="game-container">
+      {/* Progress indicator */}
+      <div className="progress-bar">
+        {Array.from({ length: totalQuestions }, (_, i) => (
+          <div
+            key={i}
+            className={`progress-dot ${
+              i < current ? 'completed' : i === current ? 'active' : ''
+            }`}
+          />
+        ))}
+      </div>
+
       {/* Player color block with avatar */}
       <div style={{
         display: 'flex',
@@ -263,84 +275,84 @@ const Game = ({ onEnd, difficulty = 'easy', playerInfo, mode, category = 'histor
         alignItems: 'center',
         marginBottom: 24,
       }}>
-        <div className="player-block" style={{
-          background: playerColor,
-          color: '#fff',
-          minWidth: 220,
-          minHeight: 56,
-          borderRadius: 14,
-          fontWeight: 'bold',
-          fontSize: 22,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 2px 8px #0002',
-          padding: '0 36px',
-        }}>
+        <div className="player-block">
           {isMulti && currentAvatar && (
             <img
               src={currentAvatar.src}
               alt={currentAvatar.label}
               title={currentAvatar.label}
-              style={{ width: 40, height: 40, borderRadius: '50%', marginRight: 16, border: '2px solid #fff', background: '#fff' }}
             />
           )}
           {isMulti ? `Player ${currentPlayerIdx + 1}: ${currentPlayer}` : 'Your Turn'}
         </div>
       </div>
-      {isMulti && <div style={{ marginBottom: '0.5em', color: '#888' }}>Turn {current + 1} of {totalQuestions}</div>}
-      <p><em>Which document is this {difficulty === 'hard' ? 'sentence' : 'paragraph'} from?</em></p>
-      <blockquote style={{ fontSize: '1.2em', margin: '1em 0' }}>{excerpt}</blockquote>
+      
+      {isMulti && <div style={{ marginBottom: '1rem', color: '#6c757d', fontSize: '0.9rem' }}>Turn {current + 1} of {totalQuestions}</div>}
+      
+      <p style={{ fontSize: '1.1rem', color: '#2c3e50', marginBottom: '1.5rem' }}>
+        <em>Which document is this {difficulty === 'hard' ? 'sentence' : 'paragraph'} from?</em>
+      </p>
+      
+      <blockquote>{excerpt}</blockquote>
+      
       <div className="game-buttons">
         {choices.map(doc => (
           <button
             key={doc.id}
             onClick={() => handleSelect(doc.id)}
             disabled={!!selected}
-            style={{
-              margin: '0.5em',
-              background: selected === doc.id
-                ? (doc.id === currentDoc.id ? '#b2f2a5' : '#f2b2b2')
-                : undefined
-            }}
+            className={
+              selected === doc.id
+                ? doc.id === currentDoc.id ? 'correct' : 'incorrect'
+                : ''
+            }
           >
             {doc.title}
           </button>
         ))}
       </div>
+      
       {showFeedback && (
-        <div style={{ marginTop: '1em' }}>
+        <div className={`feedback-section ${selected === currentDoc.id ? 'feedback-correct' : 'feedback-incorrect'}`}>
           {selected === currentDoc.id ? (
-            <span style={{ color: 'green' }}>Correct!</span>
+            <span style={{ fontWeight: '600' }}>✓ Correct!</span>
           ) : (
-            <span style={{ color: 'red' }}>
-              Incorrect. The correct answer was <b>{currentDoc.title}</b>.<br />
-              Fun fact: {currentDoc.funFacts ? currentDoc.funFacts[Math.floor(Math.random() * currentDoc.funFacts.length)] : ''}
-            </span>
+            <div>
+              <span style={{ fontWeight: '600' }}>✗ Incorrect. The correct answer was <strong>{currentDoc.title}</strong>.</span>
+              {currentDoc.funFacts && (
+                <p style={{ marginTop: '1rem', marginBottom: '0' }}>
+                  <strong>Fun fact:</strong> {currentDoc.funFacts[Math.floor(Math.random() * currentDoc.funFacts.length)]}
+                </p>
+              )}
+            </div>
           )}
-          <div>
-            <button onClick={handleNext} style={{ marginTop: '1em' }}>
+          <div style={{ marginTop: '1.5rem' }}>
+            <button 
+              onClick={handleNext} 
+              className="primary"
+              style={{ width: 'auto', minWidth: '120px' }}
+            >
               {current + 1 === totalQuestions ? 'Finish' : 'Next Question'}
             </button>
           </div>
         </div>
       )}
-      <div className="score-display" style={{ marginTop: '2em', color: '#888', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+      
+      <div className="score-display">
         {isMulti
           ? playerNames.map((name, i) => (
-              <span key={i} style={{ marginRight: '1.5em', display: 'flex', alignItems: 'center' }}>
+              <div key={i} className="score-item">
                 {playerAvatars[i] && AVATARS[playerAvatars[i]] && (
                   <img
                     src={AVATARS[playerAvatars[i]].src}
                     alt={AVATARS[playerAvatars[i]].label}
                     title={AVATARS[playerAvatars[i]].label}
-                    style={{ width: 24, height: 24, borderRadius: '50%', marginRight: 4, border: '1.5px solid #ccc', background: '#fff' }}
                   />
                 )}
-                {name}: {scores[i]}
-              </span>
+                <span>{name}: {scores[i]}</span>
+              </div>
             ))
-          : <>Score: {scores[0]} / {totalQuestions}</>
+          : <div className="score-item">Score: {scores[0]} / {totalQuestions}</div>
         }
       </div>
     </div>

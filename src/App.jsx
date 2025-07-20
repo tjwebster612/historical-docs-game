@@ -5,8 +5,6 @@ import Results from './components/Results.jsx';
 import DocumentLibrary from './components/DocumentLibrary.jsx';
 import './App.css';
 
-const NAV_BG = '#f7f9fb';
-const NAV_BORDER = '#e0e6ed';
 const APP_TITLE = 'Historical Docs & Lit Game';
 
 export default function App() {
@@ -50,31 +48,49 @@ export default function App() {
   // Navigation bar
   const showPlayAgain = screen === 'results' || screen === 'game';
   return (
-    <div style={{ background: '#f7f9fb', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+    <div className="app-container">
       {/* Top Navigation Bar */}
       <nav style={{
-        background: NAV_BG,
-        borderBottom: `1.5px solid ${NAV_BORDER}`,
-        padding: '0.5em 0',
+        background: '#ffffff',
+        borderBottom: '1px solid #e1e8ed',
+        padding: '1rem 0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         position: 'sticky',
         top: 0,
         zIndex: 10,
-        boxShadow: '0 2px 8px #0001',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+        marginBottom: '2rem',
       }}>
-        <div style={{ fontWeight: 700, fontSize: 22, color: '#3366cc', marginLeft: 24, letterSpacing: 0.5 }}>{APP_TITLE}</div>
-        <div style={{ display: 'flex', gap: 16, marginRight: 24 }}>
-          <button onClick={() => setScreen('home')} style={navBtnStyle(screen === 'home')}>Home</button>
-          <button onClick={() => setScreen('library')} style={navBtnStyle(screen === 'library')}>Library</button>
+        <div style={{ fontWeight: '700', fontSize: '1.5rem', color: '#2c3e50', marginLeft: '2rem', letterSpacing: '-0.02em' }}>{APP_TITLE}</div>
+        <div style={{ display: 'flex', gap: '1rem', marginRight: '2rem' }}>
+          <button 
+            onClick={() => setScreen('home')} 
+            className={screen === 'home' ? 'primary' : ''}
+            style={{ fontSize: '0.9rem', padding: '0.75rem 1.5rem' }}
+          >
+            Home
+          </button>
+          <button 
+            onClick={() => setScreen('library')} 
+            className={screen === 'library' ? 'primary' : ''}
+            style={{ fontSize: '0.9rem', padding: '0.75rem 1.5rem' }}
+          >
+            Library
+          </button>
           {showPlayAgain && (
-            <button onClick={handleRestart} style={navBtnStyle(false)}>Play Again</button>
+            <button 
+              onClick={handleRestart} 
+              style={{ fontSize: '0.9rem', padding: '0.75rem 1.5rem' }}
+            >
+              Play Again
+            </button>
           )}
         </div>
       </nav>
       {/* Main Content */}
-      <div style={{ maxWidth: 1400, margin: '0 auto', padding: '2em 0 4em 0' }}>
+      <div className="container">
         {screen === 'home' && <Home onStart={handleStart} />}
         {screen === 'game' && gameParams && (
           <Game
@@ -92,20 +108,4 @@ export default function App() {
       </div>
     </div>
   );
-}
-
-function navBtnStyle(active) {
-  return {
-    background: active ? '#e6f0fa' : '#fff',
-    color: '#3366cc',
-    border: '1.5px solid #c3d3ee',
-    borderRadius: 8,
-    fontWeight: 600,
-    fontSize: 16,
-    padding: '0.5em 1.2em',
-    marginLeft: 0,
-    cursor: 'pointer',
-    boxShadow: active ? '0 2px 8px #3366cc22' : undefined,
-    transition: 'background 0.2s, box-shadow 0.2s',
-  };
 }
