@@ -3,29 +3,33 @@ import React from 'react';
 const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
   // Replace these with your actual affiliate links
   const AFFILIATE_LINKS = {
-    // Amazon Associates links (replace with your actual affiliate ID)
+    // Amazon Associates links
     amazon: {
-      federalist: 'https://amazon.com/dp/0140444955?tag=YOUR_AFFILIATE_ID',
-      constitution: 'https://amazon.com/dp/0451528815?tag=YOUR_AFFILIATE_ID',
-      declaration: 'https://amazon.com/dp/0451528904?tag=YOUR_AFFILIATE_ID',
-      gatsby: 'https://amazon.com/dp/0743273567?tag=YOUR_AFFILIATE_ID',
-      mobydick: 'https://amazon.com/dp/0142437247?tag=YOUR_AFFILIATE_ID',
-      frankenstein: 'https://amazon.com/dp/0141439475?tag=YOUR_AFFILIATE_ID',
-      pride: 'https://amazon.com/dp/0141439513?tag=YOUR_AFFILIATE_ID',
-      alice: 'https://amazon.com/dp/0141439769?tag=YOUR_AFFILIATE_ID',
-      dracula: 'https://amazon.com/dp/014143984X?tag=YOUR_AFFILIATE_ID',
-      sherlock: 'https://amazon.com/dp/0140439071?tag=YOUR_AFFILIATE_ID',
-      treasure: 'https://amazon.com/dp/0141439491?tag=YOUR_AFFILIATE_ID',
-      janeeyre: 'https://amazon.com/dp/0141441143?tag=YOUR_AFFILIATE_ID',
-      huckfinn: 'https://amazon.com/dp/0142437174?tag=YOUR_AFFILIATE_ID',
-      tale: 'https://amazon.com/dp/0141439602?tag=YOUR_AFFILIATE_ID',
-      nineteen84: 'https://amazon.com/dp/0451524934?tag=YOUR_AFFILIATE_ID',
+      federalist: 'https://amazon.com/dp/0140444955?tag=tjw126-20',
+      constitution: 'https://amazon.com/dp/0451528815?tag=tjw126-20',
+      declaration: 'https://amazon.com/dp/0451528904?tag=tjw126-20',
+      gatsby: 'https://amazon.com/dp/0743273567?tag=tjw126-20',
+      mobydick: 'https://amazon.com/dp/0142437247?tag=tjw126-20',
+      frankenstein: 'https://amazon.com/dp/0141439475?tag=tjw126-20',
+      pride: 'https://amazon.com/dp/0141439513?tag=tjw126-20',
+      alice: 'https://amazon.com/dp/0141439769?tag=tjw126-20',
+      dracula: 'https://amazon.com/dp/014143984X?tag=tjw126-20',
+      sherlock: 'https://amazon.com/dp/0140439071?tag=tjw126-20',
+      treasure: 'https://amazon.com/dp/0141439491?tag=tjw126-20',
+      janeeyre: 'https://amazon.com/dp/0141441143?tag=tjw126-20',
+      huckfinn: 'https://amazon.com/dp/0142437174?tag=tjw126-20',
+      tale: 'https://amazon.com/dp/0141439602?tag=tjw126-20',
+      nineteen84: 'https://amazon.com/dp/0451524934?tag=tjw126-20',
+      // Study guides and collections
+      foundingDocs: 'https://amazon.com/dp/0451528815?tag=tjw126-20',
+      classicCollection: 'https://amazon.com/dp/0142437247?tag=tjw126-20',
+      literatureGuide: 'https://amazon.com/dp/0743273567?tag=tjw126-20',
     },
     // Audible links
     audible: {
-      gatsby: 'https://audible.com/pd/The-Great-Gatsby-Audiobook?asin=B002V5BQOQ&tag=YOUR_AFFILIATE_ID',
-      mobydick: 'https://audible.com/pd/Moby-Dick-Audiobook?asin=B002V5BQOQ&tag=YOUR_AFFILIATE_ID',
-      frankenstein: 'https://audible.com/pd/Frankenstein-Audiobook?asin=B002V5BQOQ&tag=YOUR_AFFILIATE_ID',
+      gatsby: 'https://audible.com/pd/The-Great-Gatsby-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
+      mobydick: 'https://audible.com/pd/Moby-Dick-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
+      frankenstein: 'https://audible.com/pd/Frankenstein-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
     },
     // Coursera links
     coursera: {
@@ -60,13 +64,13 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
             type: 'course',
             icon: '🎓'
           },
-          {
-            title: 'Founding Documents Collection',
-            description: 'Get the complete collection of America\'s founding documents.',
-            link: AFFILIATE_LINKS.amazon.constitution,
-            type: 'book',
-            icon: '📜'
-          }
+                     {
+             title: 'Founding Documents Collection',
+             description: 'Get the complete collection of America\'s founding documents.',
+             link: AFFILIATE_LINKS.amazon.foundingDocs,
+             type: 'book',
+             icon: '📜'
+           }
         ];
       
       case 'literature':
@@ -78,13 +82,13 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
             type: 'course',
             icon: '🎓'
           },
-          {
-            title: 'Classic Novels Collection',
-            description: 'Build your personal library of classic literature.',
-            link: AFFILIATE_LINKS.amazon.gatsby,
-            type: 'book',
-            icon: '📚'
-          }
+                     {
+             title: 'Classic Novels Collection',
+             description: 'Build your personal library of classic literature.',
+             link: AFFILIATE_LINKS.amazon.classicCollection,
+             type: 'book',
+             icon: '📚'
+           }
         ];
       
       default:
@@ -96,13 +100,13 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
             type: 'course',
             icon: '✍️'
           },
-          {
-            title: 'Study Guide Collection',
-            description: 'Get study guides to help you understand these classic works.',
-            link: AFFILIATE_LINKS.amazon.federalist,
-            type: 'book',
-            icon: '📖'
-          }
+                     {
+             title: 'Study Guide Collection',
+             description: 'Get study guides to help you understand these classic works.',
+             link: AFFILIATE_LINKS.amazon.literatureGuide,
+             type: 'book',
+             icon: '📖'
+           }
         ];
     }
   };
