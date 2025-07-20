@@ -206,9 +206,14 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
         fontSize: '0.8rem', 
         color: '#6c757d', 
         marginTop: '1rem',
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        padding: '0.75rem',
+        background: '#ffffff',
+        border: '1px solid #e1e8ed',
+        borderRadius: '6px'
       }}>
-        *As an Amazon Associate and affiliate partner, we earn from qualifying purchases.
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate and affiliate partner, we earn from qualifying purchases. 
+        When you click these links and make purchases, we may receive a commission at no additional cost to you.
       </div>
     </div>
   );

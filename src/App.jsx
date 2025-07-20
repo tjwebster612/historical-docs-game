@@ -3,6 +3,7 @@ import Home from './components/Home.jsx';
 import Game from './components/Game.jsx';
 import Results from './components/Results.jsx';
 import DocumentLibrary from './components/DocumentLibrary.jsx';
+import LegalFooter from './components/LegalFooter.jsx';
 import './App.css';
 
 const APP_TITLE = 'Archivist Academy';
@@ -106,6 +107,9 @@ export default function App() {
         )}
         {screen === 'library' && <DocumentLibrary onBack={handleRestart} />}
       </div>
+      
+      {/* Legal Footer */}
+      <LegalFooter />
     </div>
   );
 }
