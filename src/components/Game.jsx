@@ -255,7 +255,7 @@ const Game = ({ onEnd, difficulty = 'easy', playerInfo, mode, category = 'histor
   };
 
   return (
-    <div>
+    <div className="game-container">
       {/* Player color block with avatar */}
       <div style={{
         display: 'flex',
@@ -263,7 +263,7 @@ const Game = ({ onEnd, difficulty = 'easy', playerInfo, mode, category = 'histor
         alignItems: 'center',
         marginBottom: 24,
       }}>
-        <div style={{
+        <div className="player-block" style={{
           background: playerColor,
           color: '#fff',
           minWidth: 220,
@@ -291,7 +291,7 @@ const Game = ({ onEnd, difficulty = 'easy', playerInfo, mode, category = 'histor
       {isMulti && <div style={{ marginBottom: '0.5em', color: '#888' }}>Turn {current + 1} of {totalQuestions}</div>}
       <p><em>Which document is this {difficulty === 'hard' ? 'sentence' : 'paragraph'} from?</em></p>
       <blockquote style={{ fontSize: '1.2em', margin: '1em 0' }}>{excerpt}</blockquote>
-      <div>
+      <div className="game-buttons">
         {choices.map(doc => (
           <button
             key={doc.id}
@@ -325,7 +325,7 @@ const Game = ({ onEnd, difficulty = 'easy', playerInfo, mode, category = 'histor
           </div>
         </div>
       )}
-      <div style={{ marginTop: '2em', color: '#888', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+      <div className="score-display" style={{ marginTop: '2em', color: '#888', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         {isMulti
           ? playerNames.map((name, i) => (
               <span key={i} style={{ marginRight: '1.5em', display: 'flex', alignItems: 'center' }}>

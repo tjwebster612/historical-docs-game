@@ -46,16 +46,16 @@ const DocumentLibrary = ({ onBack }) => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: 600 }}>
+    <div className="library-container" style={{ display: 'flex', minHeight: 600 }}>
       {/* Left pane: categories and document list */}
-      <div style={{ width: 340, borderRight: '1px solid #eee', padding: '2em 1.5em 2em 2em', background: '#fafbfc' }}>
+      <div className="library-sidebar" style={{ width: 340, borderRight: '1px solid #eee', padding: '2em 1.5em 2em 2em', background: '#fafbfc' }}>
         <h2 style={{ marginTop: 0 }}>Document Library</h2>
         {Object.entries(docsByCategory).map(([cat, docs]) => (
           <div key={cat} style={{ marginBottom: '2em' }}>
             <h3 style={{ marginBottom: 8 }}>{CATEGORY_LABELS[cat] || cat}</h3>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {docs.map(doc => (
-                <li key={doc.id} style={{ marginBottom: '1.2em', cursor: 'pointer', background: openDoc && openDoc.id === doc.id ? '#e6f0fa' : undefined, borderRadius: 6, padding: '0.5em 0.5em 0.5em 0.5em' }} onClick={() => handleOpen(doc)}>
+                <li key={doc.id} className="document-item" style={{ marginBottom: '1.2em', cursor: 'pointer', background: openDoc && openDoc.id === doc.id ? '#e6f0fa' : undefined, borderRadius: 6, padding: '0.5em 0.5em 0.5em 0.5em' }} onClick={() => handleOpen(doc)}>
                   <div style={{ fontWeight: 600 }}>{doc.title} <span style={{ color: '#888', fontWeight: 400 }}>({doc.year})</span></div>
                   <div style={{ fontSize: '0.95em', color: '#666' }}>{doc.theme}</div>
                   <div style={{ fontSize: '0.92em', color: '#aaa' }}>{getRandomFact(doc.funFacts)}</div>
@@ -67,11 +67,11 @@ const DocumentLibrary = ({ onBack }) => {
         <button onClick={onBack} style={{ marginTop: '2em' }}>Back to Home</button>
       </div>
       {/* Right pane: document text */}
-      <div style={{ flex: 1, padding: '2em', minWidth: 0 }}>
+      <div className="library-content" style={{ flex: 1, padding: '2em', minWidth: 0 }}>
         {openDoc ? (
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <h2>{openDoc.title}</h2>
-            <div style={{ fontSize: '0.95em', whiteSpace: 'pre-wrap', maxHeight: 500, overflowY: 'auto', border: '1px solid #ddd', padding: '1em', background: '#fff', borderRadius: 8 }}>
+            <div className="document-text" style={{ fontSize: '0.95em', whiteSpace: 'pre-wrap', maxHeight: 500, overflowY: 'auto', border: '1px solid #ddd', padding: '1em', background: '#fff', borderRadius: 8 }}>
               {loading ? 'Loading...' : error ? error : docText}
             </div>
             <button onClick={() => setOpenDoc(null)} style={{ marginTop: '1em' }}>Close</button>
