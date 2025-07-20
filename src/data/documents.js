@@ -155,7 +155,7 @@ export const documents = [
     year: 1925,
     country: 'United States',
     theme: 'American Literature',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'greatgatsby.txt',
     funFacts: [
       'F. Scott Fitzgerald wrote this during the Jazz Age.',
@@ -170,7 +170,7 @@ export const documents = [
     year: 1949,
     country: 'United Kingdom',
     theme: 'Dystopian Fiction',
-    category: 'literature',
+    category: 'classic literature',
     textFile: '1984.txt',
     funFacts: [
       'George Orwell wrote this as a warning about totalitarianism.',
@@ -185,7 +185,7 @@ export const documents = [
     year: 1851,
     country: 'United States',
     theme: 'American Literature',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'mobydick.txt',
     funFacts: [
       'Herman Melville\'s masterpiece was not popular during his lifetime.',
@@ -200,7 +200,7 @@ export const documents = [
     year: 1818,
     country: 'United Kingdom',
     theme: 'Gothic Fiction',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'frankenstein.txt',
     funFacts: [
       'Mary Shelley wrote this when she was only 18 years old.',
@@ -215,7 +215,7 @@ export const documents = [
     year: 1847,
     country: 'United Kingdom',
     theme: 'Victorian Literature',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'janeeyre.txt',
     funFacts: [
       'Charlotte Brontë published this under the pen name Currer Bell.',
@@ -230,7 +230,7 @@ export const documents = [
     year: 1885,
     country: 'United States',
     theme: 'American Literature',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'huckleberryfinn.txt',
     funFacts: [
       'Mark Twain\'s masterpiece was controversial for its use of dialect.',
@@ -245,7 +245,7 @@ export const documents = [
     year: 1859,
     country: 'United Kingdom',
     theme: 'Historical Fiction',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'taleoftwocities.txt',
     funFacts: [
       'Charles Dickens\' novel opens with "It was the best of times."',
@@ -260,7 +260,7 @@ export const documents = [
     year: 1813,
     country: 'United Kingdom',
     theme: 'Romance',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'prideprejudice.txt',
     funFacts: [
       'Jane Austen\'s most famous novel opens with a famous line about marriage.',
@@ -275,7 +275,7 @@ export const documents = [
     year: 1865,
     country: 'United Kingdom',
     theme: 'Children\'s Literature',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'alice.txt',
     funFacts: [
       'Lewis Carroll wrote this for Alice Liddell, the daughter of a friend.',
@@ -290,7 +290,7 @@ export const documents = [
     year: 1897,
     country: 'United Kingdom',
     theme: 'Gothic Horror',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'dracula.txt',
     funFacts: [
       'Bram Stoker\'s novel established the modern vampire myth.',
@@ -305,7 +305,7 @@ export const documents = [
     year: 1892,
     country: 'United Kingdom',
     theme: 'Detective Fiction',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'sherlock.txt',
     funFacts: [
       'Arthur Conan Doyle created the world\'s most famous detective.',
@@ -320,7 +320,7 @@ export const documents = [
     year: 1883,
     country: 'United Kingdom',
     theme: 'Adventure',
-    category: 'literature',
+    category: 'classic literature',
     textFile: 'treasureisland.txt',
     funFacts: [
       'Robert Louis Stevenson wrote this for his stepson.',
