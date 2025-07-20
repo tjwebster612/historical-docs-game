@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { documents } from '../data/documents.js';
+import AffiliateRecommendations from './AffiliateRecommendations.jsx';
 
 function getRandomFact(facts) {
   if (!facts || !facts.length) return null;
@@ -69,19 +70,23 @@ const DocumentLibrary = ({ onBack }) => {
       {/* Right pane: document text */}
       <div className="library-content" style={{ flex: 1, padding: '2rem', minWidth: 0 }}>
         {openDoc ? (
-          <div style={{ maxWidth: 800, margin: '0 auto' }}>
-            <h2 style={{ color: '#2c3e50', marginBottom: '1.5rem' }}>{openDoc.title}</h2>
-            <div className="document-text" style={{ fontSize: '0.95rem', lineHeight: '1.6', whiteSpace: 'pre-wrap', maxHeight: 500, overflowY: 'auto', border: '1px solid #e1e8ed', padding: '1.5rem', background: '#ffffff', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)' }}>
-              {loading ? (
-                <div style={{ textAlign: 'center', color: '#6c757d', padding: '2rem' }}>Loading document...</div>
-              ) : error ? (
-                <div style={{ color: '#e74c3c', padding: '1rem' }}>{error}</div>
-              ) : (
-                docText
-              )}
+                      <div style={{ maxWidth: 800, margin: '0 auto' }}>
+              <h2 style={{ color: '#2c3e50', marginBottom: '1.5rem' }}>{openDoc.title}</h2>
+              <div className="document-text" style={{ fontSize: '0.95rem', lineHeight: '1.6', whiteSpace: 'pre-wrap', maxHeight: 500, overflowY: 'auto', border: '1px solid #e1e8ed', padding: '1.5rem', background: '#ffffff', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)' }}>
+                {loading ? (
+                  <div style={{ textAlign: 'center', color: '#6c757d', padding: '2rem' }}>Loading document...</div>
+                ) : error ? (
+                  <div style={{ color: '#e74c3c', padding: '1rem' }}>{error}</div>
+                ) : (
+                  docText
+                )}
+              </div>
+              
+              {/* Document-specific affiliate recommendations */}
+              <AffiliateRecommendations documentId={openDoc.id} />
+              
+              <button onClick={() => setOpenDoc(null)} style={{ marginTop: '1.5rem' }}>Close Document</button>
             </div>
-            <button onClick={() => setOpenDoc(null)} style={{ marginTop: '1.5rem' }}>Close Document</button>
-          </div>
         ) : (
                       <div style={{ color: '#6c757d', fontSize: '1.1rem', textAlign: 'center', marginTop: '6rem', padding: '2rem' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.3 }}>🏛️</div>

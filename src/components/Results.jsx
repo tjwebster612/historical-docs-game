@@ -6,6 +6,7 @@ import avatar3 from '../assets/avatars/avatar3.jpg';
 import avatar4 from '../assets/avatars/avatar4.jpg';
 import avatar5 from '../assets/avatars/avatar5.jpg';
 import avatar6 from '../assets/avatars/avatar6.jpg';
+import AffiliateRecommendations from './AffiliateRecommendations.jsx';
 
 const AVATARS = {
   avatar1: { label: 'Avatar 1', src: avatar1 },
@@ -209,6 +210,9 @@ const Results = ({ results, onRestart, onHome }) => {
           </div>
         )}
 
+        {/* Affiliate Recommendations */}
+        <AffiliateRecommendations type={results.category || 'general'} />
+
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <button onClick={onRestart} className="primary" style={{ marginRight: '1rem' }}>Play Again</button>
           <button onClick={onHome}>Return Home</button>
@@ -332,6 +336,9 @@ const Results = ({ results, onRestart, onHome }) => {
           </div>
         </div>
       )}
+
+      {/* Affiliate Recommendations */}
+      <AffiliateRecommendations type={results.category || 'general'} />
 
       <div style={{ textAlign: 'center', marginTop: '2rem' }}>
         <button onClick={onRestart} className="primary" style={{ marginRight: '1rem' }}>Play Again</button>
