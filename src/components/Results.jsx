@@ -50,6 +50,11 @@ const Results = ({ results, onRestart, onHome }) => {
     setError(null);
   };
 
+  // Helper function to get full document data by ID
+  const getFullDocument = (id) => {
+    return documents.find(doc => doc.id === id);
+  };
+
   // Multiplayer Results
   const isMulti = Array.isArray(results.scores) && results.playerNames;
   if (isMulti) {
@@ -124,26 +129,29 @@ const Results = ({ results, onRestart, onHome }) => {
                   <strong style={{ color: '#27ae60' }}>Documents you know well:</strong>
                   {knowWell.length ? (
                     <ul style={{ marginTop: '0.5rem' }}>
-                      {knowWell.map(d => (
-                        <li key={d.id} style={{ marginBottom: '0.25rem' }}>
-                          <button 
-                            onClick={() => handleOpen(d)} 
-                            style={{ 
-                              background: 'none', 
-                              border: 'none', 
-                              color: '#3498db', 
-                              textDecoration: 'underline', 
-                              cursor: 'pointer',
-                              fontSize: 'inherit',
-                              padding: 0,
-                              fontFamily: 'inherit'
-                            }}
-                          >
-                            {d.title}
-                          </button>
-                          {' '}({d.correct} / {d.shown} correct, {Math.round((d.correct/d.shown)*100)}%)
-                        </li>
-                      ))}
+                      {knowWell.map(d => {
+                        const fullDoc = getFullDocument(d.id);
+                        return (
+                          <li key={d.id} style={{ marginBottom: '0.25rem' }}>
+                            <button 
+                              onClick={() => handleOpen(fullDoc)} 
+                              style={{ 
+                                background: 'none', 
+                                border: 'none', 
+                                color: '#3498db', 
+                                textDecoration: 'underline', 
+                                cursor: 'pointer',
+                                fontSize: 'inherit',
+                                padding: 0,
+                                fontFamily: 'inherit'
+                              }}
+                            >
+                              {d.title}
+                            </button>
+                            {' '}({d.correct} / {d.shown} correct, {Math.round((d.correct/d.shown)*100)}%)
+                          </li>
+                        );
+                      })}
                     </ul>
                   ) : <span> (None this time)</span>}
                 </div>
@@ -151,26 +159,29 @@ const Results = ({ results, onRestart, onHome }) => {
                   <strong style={{ color: '#e74c3c' }}>Documents to review:</strong>
                   {toReview.length ? (
                     <ul style={{ marginTop: '0.5rem' }}>
-                      {toReview.map(d => (
-                        <li key={d.id} style={{ marginBottom: '0.25rem' }}>
-                          <button 
-                            onClick={() => handleOpen(d)} 
-                            style={{ 
-                              background: 'none', 
-                              border: 'none', 
-                              color: '#3498db', 
-                              textDecoration: 'underline', 
-                              cursor: 'pointer',
-                              fontSize: 'inherit',
-                              padding: 0,
-                              fontFamily: 'inherit'
-                            }}
-                          >
-                            {d.title}
-                          </button>
-                          {' '}({d.correct} / {d.shown} correct, {Math.round((d.correct/d.shown)*100)}%)
-                        </li>
-                      ))}
+                      {toReview.map(d => {
+                        const fullDoc = getFullDocument(d.id);
+                        return (
+                          <li key={d.id} style={{ marginBottom: '0.25rem' }}>
+                            <button 
+                              onClick={() => handleOpen(fullDoc)} 
+                              style={{ 
+                                background: 'none', 
+                                border: 'none', 
+                                color: '#3498db', 
+                                textDecoration: 'underline', 
+                                cursor: 'pointer',
+                                fontSize: 'inherit',
+                                padding: 0,
+                                fontFamily: 'inherit'
+                              }}
+                            >
+                              {d.title}
+                            </button>
+                            {' '}({d.correct} / {d.shown} correct, {Math.round((d.correct/d.shown)*100)}%)
+                          </li>
+                        );
+                      })}
                     </ul>
                   ) : <span> (None! Great job!)</span>}
                 </div>
