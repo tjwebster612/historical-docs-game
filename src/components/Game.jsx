@@ -42,7 +42,7 @@ const PLAYER_COLORS = [
 async function getDocText(doc) {
   if (doc.textFile) {
     try {
-      const res = await fetch(`/src/data/texts/${doc.textFile}`);
+              const res = await fetch(`/texts/${doc.textFile}`);
       if (!res.ok) return '';
       const text = await res.text();
       return text;

@@ -31,7 +31,7 @@ const DocumentLibrary = ({ onBack }) => {
     if (doc.textFile) {
       setLoading(true);
       try {
-        const res = await fetch(`/src/data/texts/${doc.textFile}`);
+        const res = await fetch(`/texts/${doc.textFile}`);
         if (!res.ok) throw new Error('Failed to load document text');
         const text = await res.text();
         setDocText(text);
