@@ -214,15 +214,33 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
       if (a.correct) finalScores[a.playerIdx] += 1;
     });
     // Aggregate attempts by category
-    const categoryStats = {};
-    attempts.forEach(a => {
-      const q = questions.find(q => q.questionId === a.questionId);
-      const cat = q?.doc.category;
-      if (!cat) return;
-      if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, total: 0 };
-      categoryStats[cat].total += 1;
-      if (a.correct) categoryStats[cat].correct += 1;
-    });
+    let categoryStats;
+    if (isMulti) {
+      // Per-player category stats
+      categoryStats = perPlayerAttempts.map(playerAttempts => {
+        const stats = {};
+        playerAttempts.forEach(a => {
+          const q = questions.find(q => q.questionId === a.questionId);
+          const cat = q?.doc.category;
+          if (!cat) return;
+          if (!stats[cat]) stats[cat] = { correct: 0, total: 0 };
+          stats[cat].total += 1;
+          if (a.correct) stats[cat].correct += 1;
+        });
+        return stats;
+      });
+    } else {
+      // Single player: one object
+      categoryStats = {};
+      attempts.forEach(a => {
+        const q = questions.find(q => q.questionId === a.questionId);
+        const cat = q?.doc.category;
+        if (!cat) return;
+        if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, total: 0 };
+        categoryStats[cat].total += 1;
+        if (a.correct) categoryStats[cat].correct += 1;
+      });
+    }
     onEnd({
       scores: finalScores,
       total: totalQuestions,
@@ -298,15 +316,33 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
         if (a.correct) finalScores[a.playerIdx] += 1;
       });
       // Aggregate attempts by category
-      const categoryStats = {};
-      allAttempts.forEach(a => {
-        const q = questions.find(q => q.questionId === a.questionId);
-        const cat = q?.doc.category;
-        if (!cat) return;
-        if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, total: 0 };
-        categoryStats[cat].total += 1;
-        if (a.correct) categoryStats[cat].correct += 1;
-      });
+      let categoryStats;
+      if (isMulti) {
+        // Per-player category stats
+        categoryStats = perPlayerAttempts.map(playerAttempts => {
+          const stats = {};
+          playerAttempts.forEach(a => {
+            const q = questions.find(q => q.questionId === a.questionId);
+            const cat = q?.doc.category;
+            if (!cat) return;
+            if (!stats[cat]) stats[cat] = { correct: 0, total: 0 };
+            stats[cat].total += 1;
+            if (a.correct) stats[cat].correct += 1;
+          });
+          return stats;
+        });
+      } else {
+        // Single player: one object
+        categoryStats = {};
+        allAttempts.forEach(a => {
+          const q = questions.find(q => q.questionId === a.questionId);
+          const cat = q?.doc.category;
+          if (!cat) return;
+          if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, total: 0 };
+          categoryStats[cat].total += 1;
+          if (a.correct) categoryStats[cat].correct += 1;
+        });
+      }
       onEnd({
         scores: finalScores,
         total: totalQuestions,

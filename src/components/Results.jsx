@@ -42,25 +42,69 @@ const Results = ({ results, onRestart, onHome }) => {
   // Move category mode block here to guarantee early return
   if (results.mode === 'category' && results.categoryStats) {
     console.log('Rendering category mode results');
+    const isMulti = Array.isArray(results.categoryStats) && results.playerNames && results.scores;
     return (
       <div ref={containerRef} className="card" style={{ maxWidth: 800, margin: '0 auto' }}>
         <div className="app-header">
           <h1 className="app-title">Category Knowledge Results</h1>
         </div>
-        <div style={{ margin: '2rem 0' }}>
-          <h3>Category Knowledge</h3>
-          {Object.entries(results.categoryStats).map(([cat, stat]) => (
-            <div key={cat} style={{ marginBottom: '1rem' }}>
-              <strong>{cat.charAt(0).toUpperCase() + cat.slice(1)}:</strong>
-              {stat.correct === stat.total
-                ? " You know this category!"
-                : stat.correct === 0
-                  ? " You don't know this category."
-                  : " Partial knowledge."}
-              ({stat.correct} / {stat.total} correct)
+        {isMulti ? (
+          <>
+            {/* Scoreboard */}
+            <div style={{ marginBottom: '2rem' }}>
+              <h3>Scoreboard</h3>
+              <ol style={{ fontSize: '1.1rem' }}>
+                {results.playerNames
+                  .map((name, i) => ({ name, score: results.scores[i], idx: i }))
+                  .sort((a, b) => b.score - a.score)
+                  .map(({ name, score, idx }, rank) => (
+                    <li key={idx} style={{ fontWeight: rank === 0 ? 'bold' : undefined, display: 'flex', alignItems: 'center', marginBottom: '0.5rem' }}>
+                      {rank === 0 && <span role="img" aria-label="trophy" style={{ fontSize: '1.2rem', marginRight: '0.5rem' }}>🏆</span>}
+                      {results.playerAvatars && AVATARS[results.playerAvatars[idx]] && (
+                        <img src={AVATARS[results.playerAvatars[idx]].src} alt={AVATARS[results.playerAvatars[idx]].label} style={{ width: 32, height: 32, borderRadius: '50%', marginRight: '0.5rem', border: '2px solid #e1e8ed', background: '#fff' }} />
+                      )}
+                      {name}: {score}
+                    </li>
+                  ))}
+              </ol>
             </div>
-          ))}
-        </div>
+            {/* Per-player category breakdown */}
+            <div style={{ margin: '2rem 0' }}>
+              <h3>Category Knowledge by Player</h3>
+              {results.playerNames.map((name, i) => (
+                <div key={i} style={{ marginBottom: '1.5rem', border: '1px solid #e1e8ed', borderRadius: '12px', padding: '1.5rem', background: '#f8f9fa' }}>
+                  <h4 style={{ marginTop: 0, color: '#2c3e50' }}>{name}</h4>
+                  {Object.entries(results.categoryStats[i]).map(([cat, stat]) => (
+                    <div key={cat} style={{ marginBottom: '0.5rem' }}>
+                      <strong>{cat.charAt(0).toUpperCase() + cat.slice(1)}:</strong>
+                      {stat.correct === stat.total
+                        ? " You know this category!"
+                        : stat.correct === 0
+                          ? " You don't know this category."
+                          : " Partial knowledge."}
+                      ({stat.correct} / {stat.total} correct)
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div style={{ margin: '2rem 0' }}>
+            <h3>Category Knowledge</h3>
+            {Object.entries(results.categoryStats).map(([cat, stat]) => (
+              <div key={cat} style={{ marginBottom: '1rem' }}>
+                <strong>{cat.charAt(0).toUpperCase() + cat.slice(1)}:</strong>
+                {stat.correct === stat.total
+                  ? " You know this category!"
+                  : stat.correct === 0
+                    ? " You don't know this category."
+                    : " Partial knowledge."}
+                ({stat.correct} / {stat.total} correct)
+              </div>
+            ))}
+          </div>
+        )}
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <button onClick={onRestart} className="primary" style={{ marginRight: '1rem' }}>Play Again</button>
           <button onClick={onHome}>Return Home</button>
