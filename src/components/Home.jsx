@@ -18,6 +18,7 @@ const AVATARS = [
 const CATEGORIES = [
   { value: 'history', label: 'History Documents' },
   { value: 'classic literature', label: 'Classic Literature' },
+  { value: 'pop culture', label: 'Pop Culture' },
 ];
 
 export default function Home({ onStart }) {
@@ -70,6 +71,8 @@ export default function Home({ onStart }) {
   const handleStart = () => {
     if (mode === 'multi') {
       onStart('multi', difficulty, { numPlayers, playerNames, playerAvatars, category });
+    } else if (mode === 'category') {
+      onStart('category', difficulty, { numPlayers, playerNames, playerAvatars });
     } else {
       onStart('single', difficulty, category);
     }
@@ -99,6 +102,13 @@ export default function Home({ onStart }) {
           style={{ minWidth: '140px' }}
         >
           Multiplayer
+        </button>
+        <button 
+          onClick={() => setMode('category')} 
+          className={mode === 'category' ? 'primary' : ''}
+          style={{ minWidth: '140px' }}
+        >
+          Category Mode
         </button>
       </div>
       
@@ -136,11 +146,17 @@ export default function Home({ onStart }) {
             background: '#ffffff',
             color: '#2c3e50'
           }}
+          disabled={mode === 'category'}
         >
           {CATEGORIES.map(cat => (
             <option key={cat.value} value={cat.value}>{cat.label}</option>
           ))}
         </select>
+        {mode === 'category' && (
+          <p style={{ fontSize: '0.9rem', color: '#6c757d', marginTop: '0.5rem' }}>
+            Category mode tests your ability to identify which category content belongs to.
+          </p>
+        )}
       </div>
       {mode === 'multi' && (
         <div style={{ margin: '1em 0', border: '1px solid #eee', padding: '1em', borderRadius: 8, maxWidth: 500, marginLeft: 'auto', marginRight: 'auto', background: '#f7f9fb' }}>

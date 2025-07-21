@@ -40,6 +40,19 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
       apushGuide: 'https://amazon.com/dp/1506262085?tag=tjw126-20', // AP US History guide
       americanHistory: 'https://amazon.com/dp/0393602205?tag=tjw126-20', // American history textbook
       governmentTextbook: 'https://amazon.com/dp/0134162077?tag=tjw126-20', // Government textbook
+      // Pop culture and social media
+      socialMediaBook: 'https://amazon.com/dp/0143124471?tag=tjw126-20', // Social media impact book
+      viralMarketing: 'https://amazon.com/dp/1591845637?tag=tjw126-20', // Viral marketing strategies
+      internetCulture: 'https://amazon.com/dp/0143127799?tag=tjw126-20', // Internet culture book
+      celebrityMemoir: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Celebrity memoir
+      twitterBook: 'https://amazon.com/dp/1591846358?tag=tjw126-20', // Twitter history book
+      memeBook: 'https://amazon.com/dp/0143127799?tag=tjw126-20', // Meme culture book
+      // Pop culture specific
+      trumpBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Trump biography
+      kanyeBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Kanye West biography
+      justinBieberBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Justin Bieber biography
+      kimKardashianBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Kim Kardashian book
+      ellenBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Ellen DeGeneres book
     },
     // Audible links
     audible: {
@@ -176,6 +189,67 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
         });
       }
 
+      // Add pop culture recommendations for viral tweets
+      if (documentId === 'covfefe' || documentId === 'damnyouautocorrect' || documentId === 'justinbieber' || documentId === 'kanyewest' || documentId === 'charliesheen' || documentId === 'kimkardashian' || documentId === 'ellenoscars' || documentId === 'chrisbrown' || documentId === 'ladygaga' || documentId === 'barackobama') {
+        recommendations.push({
+          title: 'The Social Media Revolution',
+          description: 'Learn how social media changed communication and culture.',
+          link: AFFILIATE_LINKS.amazon.socialMediaBook,
+          type: 'book',
+          icon: '📱'
+        });
+      }
+
+      if (documentId === 'covfefe') {
+        recommendations.push({
+          title: 'Trump: The Art of the Deal',
+          description: 'The business and political career of Donald Trump.',
+          link: AFFILIATE_LINKS.amazon.trumpBook,
+          type: 'book',
+          icon: '👔'
+        });
+      }
+
+      if (documentId === 'kanyewest') {
+        recommendations.push({
+          title: 'Kanye West: The Life and Career',
+          description: 'Explore the controversial and influential career of Kanye West.',
+          link: AFFILIATE_LINKS.amazon.kanyeBook,
+          type: 'book',
+          icon: '🎵'
+        });
+      }
+
+      if (documentId === 'justinbieber') {
+        recommendations.push({
+          title: 'Justin Bieber: From YouTube to Superstar',
+          description: 'The rise of Justin Bieber from internet sensation to global star.',
+          link: AFFILIATE_LINKS.amazon.justinBieberBook,
+          type: 'book',
+          icon: '🎤'
+        });
+      }
+
+      if (documentId === 'kimkardashian') {
+        recommendations.push({
+          title: 'The Kardashian Effect',
+          description: 'How the Kardashian family changed reality TV and social media.',
+          link: AFFILIATE_LINKS.amazon.kimKardashianBook,
+          type: 'book',
+          icon: '📺'
+        });
+      }
+
+      if (documentId === 'ellenoscars') {
+        recommendations.push({
+          title: 'Ellen DeGeneres: A Biography',
+          description: 'The life and career of Ellen DeGeneres.',
+          link: AFFILIATE_LINKS.amazon.ellenBook,
+          type: 'book',
+          icon: '🎭'
+        });
+      }
+
       return recommendations;
     }
 
@@ -212,23 +286,60 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
             icon: '👥'
           }
         ];
-      
-      case 'literature':
+      case 'classic literature':
         return [
           {
-            title: 'Classic Literature Course',
-            description: 'Study the great works of literature with university professors.',
+            title: 'Literature Course',
+            description: 'Study classic literature with expert professors.',
             link: AFFILIATE_LINKS.coursera.literature,
             type: 'course',
             icon: '🎓'
           },
-                     {
-             title: 'Classic Novels Collection',
-             description: 'Build your personal library of classic literature.',
-             link: AFFILIATE_LINKS.amazon.classicCollection,
-             type: 'book',
-             icon: '📚'
-           }
+          {
+            title: 'Classic Literature Collection',
+            description: 'Get the complete collection of classic novels.',
+            link: AFFILIATE_LINKS.amazon.classicCollection,
+            type: 'book',
+            icon: '📚'
+          },
+          {
+            title: 'Literature Study Guide',
+            description: 'Comprehensive guide to understanding classic literature.',
+            link: AFFILIATE_LINKS.amazon.literatureGuide,
+            type: 'book',
+            icon: '📖'
+          }
+        ];
+      case 'pop culture':
+        return [
+          {
+            title: 'The Social Media Revolution',
+            description: 'Learn how social media changed communication and culture.',
+            link: AFFILIATE_LINKS.amazon.socialMediaBook,
+            type: 'book',
+            icon: '📱'
+          },
+          {
+            title: 'Viral Marketing Strategies',
+            description: 'Understand how content goes viral and spreads online.',
+            link: AFFILIATE_LINKS.amazon.viralMarketing,
+            type: 'book',
+            icon: '🚀'
+          },
+          {
+            title: 'Internet Culture: A History',
+            description: 'Explore the evolution of internet culture and memes.',
+            link: AFFILIATE_LINKS.amazon.internetCulture,
+            type: 'book',
+            icon: '🌐'
+          },
+          {
+            title: 'Twitter: The History of a Platform',
+            description: 'Learn about Twitter\'s impact on communication and politics.',
+            link: AFFILIATE_LINKS.amazon.twitterBook,
+            type: 'book',
+            icon: '🐦'
+          }
         ];
       
       default:

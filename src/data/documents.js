@@ -448,5 +448,156 @@ export const documents = [
       'It was delivered just two years before the wall fell.',
       'It symbolized the end of the Cold War era.'
     ]
+  },
+  // Pop Culture - Viral Tweets and Social Media
+  {
+    id: 'covfefe',
+    title: 'Trump\'s "Covfefe" Tweet',
+    year: 2017,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'Despite the constant negative press covfefe',
+    funFacts: [
+      'This tweet was posted at 12:06 AM on May 31, 2017.',
+      'The word "covfefe" became a viral internet meme.',
+      'It was left incomplete and never finished.',
+      'It received over 100,000 retweets and sparked endless speculation.'
+    ]
+  },
+  {
+    id: 'damnyouautocorrect',
+    title: 'Damn You Auto Correct Tweet',
+    year: 2010,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'Damn you auto correct! I meant to say "I\'m going to the store" not "I\'m going to the whore"',
+    funFacts: [
+      'This tweet went viral in 2010.',
+      'It spawned the popular "Damn You Auto Correct" meme.',
+      'It highlighted the humor in autocorrect fails.',
+      'It became a cultural reference for autocorrect mishaps.'
+    ]
+  },
+  {
+    id: 'justinbieber',
+    title: 'Justin Bieber\'s "Baby" Tweet',
+    year: 2010,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'Baby, baby, baby oh! Like baby, baby, baby no! I thought you\'d always be mine, mine',
+    funFacts: [
+      'This tweet referenced his hit song "Baby" featuring Ludacris.',
+      'It became one of the most retweeted posts of 2010.',
+      'The song itself became a viral sensation.',
+      'It helped establish Bieber as a social media phenomenon.'
+    ]
+  },
+  {
+    id: 'kanyewest',
+    title: 'Kanye West\'s "I\'mma Let You Finish" Tweet',
+    year: 2009,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'Yo Taylor, I\'m really happy for you, I\'mma let you finish, but Beyoncé had one of the best videos of all time!',
+    funFacts: [
+      'This tweet referenced his infamous VMA interruption.',
+      'It became one of the most quoted lines in pop culture.',
+      'It spawned countless memes and parodies.',
+      'It happened during Taylor Swift\'s acceptance speech.'
+    ]
+  },
+  {
+    id: 'charliesheen',
+    title: 'Charlie Sheen\'s "Winning" Tweet',
+    year: 2011,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'I\'m not bi-polar, I\'m bi-winning! I win here and I win there!',
+    funFacts: [
+      'This tweet went viral during Sheen\'s public breakdown.',
+      'It became a catchphrase for the era.',
+      'It was part of his "Tiger Blood" rant.',
+      'It spawned countless memes and merchandise.'
+    ]
+  },
+  {
+    id: 'kimkardashian',
+    title: 'Kim Kardashian\'s "Break the Internet" Tweet',
+    year: 2014,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'When you\'re like I have nothing to wear LOL',
+    funFacts: [
+      'This tweet was posted before her famous Paper magazine cover.',
+      'It became associated with her "Break the Internet" campaign.',
+      'It went viral for its relatability.',
+      'It was part of her social media strategy.'
+    ]
+  },
+  {
+    id: 'ellenoscars',
+    title: 'Ellen\'s Oscar Selfie Tweet',
+    year: 2014,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'If only Bradley\'s arm was longer. Best photo ever. #oscars',
+    funFacts: [
+      'This tweet accompanied the most retweeted photo ever.',
+      'It featured multiple A-list celebrities in one selfie.',
+      'It broke Twitter records at the time.',
+      'It became a defining moment in social media history.'
+    ]
+  },
+  {
+    id: 'chrisbrown',
+    title: 'Chris Brown\'s "I\'m Not Perfect" Tweet',
+    year: 2011,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'I\'m not perfect, but I\'m perfect for you.',
+    funFacts: [
+      'This tweet became a popular relationship quote.',
+      'It was widely shared and referenced.',
+      'It became a meme template.',
+      'It was part of his social media presence during controversies.'
+    ]
+  },
+  {
+    id: 'ladygaga',
+    title: 'Lady Gaga\'s "Little Monsters" Tweet',
+    year: 2010,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'I love my little monsters so much. You\'re the reason I wake up every morning.',
+    funFacts: [
+      'This tweet helped establish her fan base name.',
+      'It became a defining moment for her relationship with fans.',
+      'It was widely shared by her followers.',
+      'It helped create her brand identity.'
+    ]
+  },
+  {
+    id: 'barackobama',
+    title: 'Obama\'s "Four More Years" Tweet',
+    year: 2012,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'Four more years.',
+    funFacts: [
+      'This tweet was posted after winning re-election.',
+      'It became the most retweeted tweet of 2012.',
+      'It was accompanied by a photo of him hugging Michelle.',
+      'It symbolized his victory and hope for the future.'
+    ]
   }
 ]; 

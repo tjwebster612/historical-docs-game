@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Home from './components/Home.jsx';
 import Game from './components/Game.jsx';
+import CategoryGame from './components/CategoryGame.jsx';
 import Results from './components/Results.jsx';
 import DocumentLibrary from './components/DocumentLibrary.jsx';
 import LegalFooter from './components/LegalFooter.jsx';
@@ -24,6 +25,13 @@ export default function App() {
         difficulty,
         playerInfo: playerInfoOrCategory,
         category: playerInfoOrCategory.category || 'history',
+      });
+    } else if (mode === 'category') {
+      setGameParams({
+        mode,
+        difficulty,
+        playerInfo: playerInfoOrCategory,
+        category: 'category',
       });
     } else {
       setGameParams({
@@ -94,13 +102,21 @@ export default function App() {
       <div className="container">
         {screen === 'home' && <Home onStart={handleStart} />}
         {screen === 'game' && gameParams && (
-          <Game
-            onEnd={handleEnd}
-            difficulty={gameParams.difficulty}
-            playerInfo={gameParams.playerInfo}
-            mode={gameParams.mode}
-            category={gameParams.category}
-          />
+          gameParams.mode === 'category' ? (
+            <CategoryGame
+              onEnd={handleEnd}
+              difficulty={gameParams.difficulty}
+              playerInfo={gameParams.playerInfo}
+            />
+          ) : (
+            <Game
+              onEnd={handleEnd}
+              difficulty={gameParams.difficulty}
+              playerInfo={gameParams.playerInfo}
+              mode={gameParams.mode}
+              category={gameParams.category}
+            />
+          )
         )}
         {screen === 'results' && results && (
           <Results results={results} onRestart={handleRestart} onHome={handleRestart} />
