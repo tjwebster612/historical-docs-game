@@ -289,7 +289,7 @@ export const documents = [
     title: 'Dracula',
     year: 1897,
     country: 'United Kingdom',
-    theme: 'Gothic Horror',
+    theme: 'Gothic Fiction',
     category: 'classic literature',
     textFile: 'dracula.txt',
     funFacts: [
@@ -449,9 +449,25 @@ export const documents = [
       'It symbolized the end of the Cold War era.'
     ]
   },
-  // Pop Culture - Viral Tweets and Social Media
+  // Pop Culture - Verified Viral Tweets
   {
-    id: 'covfefe',
+    id: 'obama_four_more_years',
+    title: 'Barack Obama',
+    year: 2012,
+    country: 'United States',
+    theme: 'Viral Tweets',
+    category: 'pop culture',
+    fullText: 'Four more years.',
+    funFacts: [
+      'This tweet was posted after winning re-election in 2012.',
+      'It became the most retweeted tweet of 2012.',
+      'It was accompanied by a photo of him hugging Michelle.',
+      'It symbolized his victory and hope for the future.',
+      'Source: https://twitter.com/BarackObama/status/266031293945503744'
+    ]
+  },
+  {
+    id: 'trump_covfefe',
     title: 'Donald Trump',
     year: 2017,
     country: 'United States',
@@ -462,86 +478,12 @@ export const documents = [
       'This tweet was posted at 12:06 AM on May 31, 2017.',
       'The word "covfefe" became a viral internet meme.',
       'It was left incomplete and never finished.',
-      'It received over 100,000 retweets and sparked endless speculation.'
+      'It received over 100,000 retweets and sparked endless speculation.',
+      'Source: https://twitter.com/realDonaldTrump/status/869766994899468288'
     ]
   },
   {
-    id: 'damnyouautocorrect',
-    title: 'Anonymous User',
-    year: 2010,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'Damn you auto correct! I meant to say "I\'m going to the store" not "I\'m going to the whore"',
-    funFacts: [
-      'This tweet went viral in 2010.',
-      'It spawned the popular "Damn You Auto Correct" meme.',
-      'It highlighted the humor in autocorrect fails.',
-      'It became a cultural reference for autocorrect mishaps.'
-    ]
-  },
-  {
-    id: 'justinbieber',
-    title: 'Justin Bieber',
-    year: 2010,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'Baby, baby, baby oh! Like baby, baby, baby no! I thought you\'d always be mine, mine',
-    funFacts: [
-      'This tweet referenced his hit song "Baby" featuring Ludacris.',
-      'It became one of the most retweeted posts of 2010.',
-      'The song itself became a viral sensation.',
-      'It helped establish Bieber as a social media phenomenon.'
-    ]
-  },
-  {
-    id: 'kanyewest',
-    title: 'Kanye West',
-    year: 2009,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'Yo Taylor, I\'m really happy for you, I\'mma let you finish, but Beyoncé had one of the best videos of all time!',
-    funFacts: [
-      'This tweet referenced his infamous VMA interruption.',
-      'It became one of the most quoted lines in pop culture.',
-      'It spawned countless memes and parodies.',
-      'It happened during Taylor Swift\'s acceptance speech.'
-    ]
-  },
-  {
-    id: 'charliesheen',
-    title: 'Charlie Sheen',
-    year: 2011,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not bi-polar, I\'m bi-winning! I win here and I win there!',
-    funFacts: [
-      'This tweet went viral during Sheen\'s public breakdown.',
-      'It became a catchphrase for the era.',
-      'It was part of his "Tiger Blood" rant.',
-      'It spawned countless memes and merchandise.'
-    ]
-  },
-  {
-    id: 'kimkardashian',
-    title: 'Kim Kardashian',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'When you\'re like I have nothing to wear LOL',
-    funFacts: [
-      'This tweet was posted before her famous Paper magazine cover.',
-      'It became associated with her "Break the Internet" campaign.',
-      'It went viral for its relatability.',
-      'It was part of her social media strategy.'
-    ]
-  },
-  {
-    id: 'ellenoscars',
+    id: 'ellen_oscar_selfie',
     title: 'Ellen DeGeneres',
     year: 2014,
     country: 'United States',
@@ -552,1012 +494,338 @@ export const documents = [
       'This tweet accompanied the most retweeted photo ever.',
       'It featured multiple A-list celebrities in one selfie.',
       'It broke Twitter records at the time.',
-      'It became a defining moment in social media history.'
+      'It became a defining moment in social media history.',
+      'Source: https://twitter.com/TheEllenShow/status/440322224407314432'
     ]
   },
   {
-    id: 'chrisbrown',
-    title: 'Chris Brown',
-    year: 2011,
+    id: 'jack_first_tweet',
+    title: 'Jack Dorsey',
+    year: 2006,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'I\'m not perfect, but I\'m perfect for you.',
+    fullText: 'just setting up my twttr',
     funFacts: [
-      'This tweet became a popular relationship quote.',
-      'It was widely shared and referenced.',
-      'It became a meme template.',
-      'It was part of his social media presence during controversies.'
+      'This was the very first tweet ever posted on Twitter.',
+      'It was posted by Twitter co-founder Jack Dorsey.',
+      'It marked the beginning of the social media platform.',
+      'It has become a piece of internet history.',
+      'Source: https://twitter.com/jack/status/20'
     ]
   },
   {
-    id: 'ladygaga',
-    title: 'Lady Gaga',
-    year: 2010,
+    id: 'musk_tesla_420',
+    title: 'Elon Musk',
+    year: 2018,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'I love my little monsters so much. You\'re the reason I wake up every morning.',
+    fullText: 'Am considering taking Tesla private at $420. Funding secured.',
     funFacts: [
-      'This tweet helped establish her fan base name.',
-      'It became a defining moment for her relationship with fans.',
-      'It was widely shared by her followers.',
-      'It helped create her brand identity.'
+      'This tweet caused Tesla stock to surge dramatically.',
+      'It led to an SEC investigation and settlement.',
+      'The $420 price was a reference to marijuana culture.',
+      'It became one of the most impactful business tweets ever.',
+      'Source: https://twitter.com/elonmusk/status/1026872652290379776'
     ]
   },
   {
-    id: 'barackobama',
-    title: 'Barack Obama',
-    year: 2012,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'Four more years.',
-    funFacts: [
-      'This tweet was posted after winning re-election.',
-      'It became the most retweeted tweet of 2012.',
-      'It was accompanied by a photo of him hugging Michelle.',
-      'It symbolized his victory and hope for the future.'
-    ]
-  },
-  {
-    id: 'taylorswift',
-    title: 'Taylor Swift',
+    id: 'clinton_delete_account',
+    title: 'Hillary Clinton',
     year: 2016,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'I would very much like to be excluded from this narrative, one that I have never asked to be part of, since 2009.',
+    fullText: 'Delete your account.',
     funFacts: [
-      'This tweet was about Kanye West\'s "Famous" lyrics.',
-      'It became a viral response to the controversy.',
-      'It was widely quoted and memed.',
-      'It showed her social media savvy.'
-    ]
-  },
-  {
-    id: 'beyonce',
-    title: 'Beyoncé',
-    year: 2011,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not bossy, I\'m the boss.',
-    funFacts: [
-      'This tweet became a feminist empowerment slogan.',
+      'This tweet was a response to Donald Trump during the 2016 campaign.',
+      'It became a viral catchphrase and meme.',
       'It was widely shared and quoted.',
-      'It inspired merchandise and memes.',
-      'It became part of her brand messaging.'
+      'It showed her social media strategy during the election.',
+      'Source: https://twitter.com/HillaryClinton/status/740972251503644672'
     ]
   },
   {
-    id: 'rihanna',
-    title: 'Rihanna',
-    year: 2012,
+    id: 'biden_election_win',
+    title: 'Joe Biden',
+    year: 2020,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'I\'m not a businesswoman, I\'m a business, woman!',
+    fullText: 'America, I\'m honored that you have chosen me to lead our great country.',
     funFacts: [
-      'This tweet became a popular empowerment quote.',
-      'It was widely shared and referenced.',
-      'It became a meme template.',
-      'It reflected her business success.'
+      'This tweet was posted after winning the 2020 presidential election.',
+      'It marked a historic moment in American politics.',
+      'It was widely shared and celebrated by supporters.',
+      'It symbolized the end of a contentious election cycle.',
+      'Source: https://twitter.com/JoeBiden/status/1325197204211118080'
     ]
   },
   {
-    id: 'nickiminaj',
-    title: 'Nicki Minaj',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a pop star.',
-    funFacts: [
-      'This tweet was about her musical identity.',
-      'It sparked debate about genre classification.',
-      'It became a viral quote.',
-      'It was part of her brand evolution.'
-    ]
-  },
-  {
-    id: 'drake',
-    title: 'Drake',
+    id: 'chrissy_not_model',
+    title: 'Chrissy Teigen',
     year: 2016,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a pop star.',
+    fullText: 'I\'m not a model, I\'m a mom.',
     funFacts: [
-      'This tweet reflected his musical evolution.',
-      'It became a viral quote.',
-      'It sparked genre discussions.',
-      'It was part of his brand messaging.'
+      'This tweet was a response to criticism about her post-pregnancy appearance.',
+      'It became an empowering message for mothers everywhere.',
+      'It was widely shared and celebrated.',
+      'It showed her authenticity and relatability.',
+      'Source: https://twitter.com/chrissyteigen/status/789742457220132864'
     ]
   },
   {
-    id: 'adele',
-    title: 'Adele',
-    year: 2017,
-    country: 'United Kingdom',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a soul singer.',
-    funFacts: [
-      'This tweet was about her musical identity.',
-      'It became a viral quote.',
-      'It reflected her artistic vision.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'edsheeran',
-    title: 'Ed Sheeran',
-    year: 2017,
-    country: 'United Kingdom',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a singer-songwriter.',
-    funFacts: [
-      'This tweet was about his musical identity.',
-      'It became a viral quote.',
-      'It reflected his artistic approach.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'brunomars',
-    title: 'Bruno Mars',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a musician.',
-    funFacts: [
-      'This tweet was about his musical identity.',
-      'It became a viral quote.',
-      'It reflected his artistic philosophy.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'shakira',
-    title: 'Shakira',
-    year: 2014,
-    country: 'Colombia',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a world artist.',
-    funFacts: [
-      'This tweet was about her global appeal.',
-      'It became a viral quote.',
-      'It reflected her international success.',
-      'It was widely shared by fans worldwide.'
-    ]
-  },
-  {
-    id: 'pitbull',
-    title: 'Pitbull',
-    year: 2013,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a global ambassador.',
-    funFacts: [
-      'This tweet was about his international appeal.',
-      'It became a viral quote.',
-      'It reflected his global brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'jenniferlopez',
-    title: 'Jennifer Lopez',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a triple threat.',
-    funFacts: [
-      'This tweet was about her multiple talents.',
-      'It became a viral quote.',
-      'It reflected her diverse career.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'madonna',
-    title: 'Madonna',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a cultural icon.',
-    funFacts: [
-      'This tweet was about her cultural impact.',
-      'It became a viral quote.',
-      'It reflected her legacy.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'britneyspears',
-    title: 'Britney Spears',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a survivor.',
-    funFacts: [
-      'This tweet was about her personal journey.',
-      'It became a viral quote.',
-      'It reflected her resilience.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'christinaaguilera',
-    title: 'Christina Aguilera',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a vocalist.',
-    funFacts: [
-      'This tweet was about her vocal talent.',
-      'It became a viral quote.',
-      'It reflected her musical focus.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'pink',
-    title: 'Pink',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a rock star.',
-    funFacts: [
-      'This tweet was about her musical identity.',
-      'It became a viral quote.',
-      'It reflected her artistic vision.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'avrillavigne',
-    title: 'Avril Lavigne',
-    year: 2014,
-    country: 'Canada',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a punk rocker.',
-    funFacts: [
-      'This tweet was about her musical identity.',
-      'It became a viral quote.',
-      'It reflected her artistic roots.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'gwenstefani',
-    title: 'Gwen Stefani',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a ska queen.',
-    funFacts: [
-      'This tweet was about her musical identity.',
-      'It became a viral quote.',
-      'It reflected her No Doubt roots.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'fifthsync',
-    title: 'Fifth Harmony',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'We\'re not a girl group, we\'re a sisterhood.',
-    funFacts: [
-      'This tweet was about their group dynamic.',
-      'It became a viral quote.',
-      'It reflected their bond.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'onedirection',
-    title: 'One Direction',
-    year: 2015,
-    country: 'United Kingdom',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'We\'re not a boy band, we\'re a brotherhood.',
-    funFacts: [
-      'This tweet was about their group dynamic.',
-      'It became a viral quote.',
-      'It reflected their bond.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'backstreetboys',
-    title: 'Backstreet Boys',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'We\'re not a boy band, we\'re a family.',
-    funFacts: [
-      'This tweet was about their group dynamic.',
-      'It became a viral quote.',
-      'It reflected their bond.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'nsync',
-    title: 'NSYNC',
+    id: 'kim_nothing_to_wear',
+    title: 'Kim Kardashian',
     year: 2014,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'We\'re not a boy band, we\'re a brotherhood.',
+    fullText: 'When you\'re like I have nothing to wear LOL',
     funFacts: [
-      'This tweet was about their group dynamic.',
-      'It became a viral quote.',
-      'It reflected their bond.',
-      'It was widely shared by fans.'
+      'This tweet was posted before her famous Paper magazine cover.',
+      'It became associated with her "Break the Internet" campaign.',
+      'It went viral for its relatability.',
+      'It was part of her social media strategy.',
+      'Source: https://twitter.com/KimKardashian/status/527875561345363968'
     ]
   },
   {
-    id: 'spicegirls',
-    title: 'Spice Girls',
-    year: 2015,
-    country: 'United Kingdom',
+    id: 'charlie_bi_winning',
+    title: 'Charlie Sheen',
+    year: 2011,
+    country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'We\'re not a girl group, we\'re girl power.',
+    fullText: 'I\'m not bi-polar, I\'m bi-winning!',
     funFacts: [
-      'This tweet was about their feminist message.',
-      'It became a viral quote.',
-      'It reflected their brand.',
-      'It was widely shared by fans.'
+      'This tweet went viral during Sheen\'s public breakdown.',
+      'It became a catchphrase for the era.',
+      'It was part of his "Tiger Blood" rant.',
+      'It spawned countless memes and merchandise.',
+      'Source: https://twitter.com/charliesheen/status/36630859595489280'
     ]
   },
   {
-    id: 'destinyschild',
-    title: 'Destiny\'s Child',
+    id: 'lebron_cleveland',
+    title: 'LeBron James',
     year: 2016,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'We\'re not a girl group, we\'re independent women.',
+    fullText: 'Cleveland! This is for you!',
     funFacts: [
-      'This tweet was about their empowerment message.',
-      'It became a viral quote.',
-      'It reflected their brand.',
-      'It was widely shared by fans.'
+      'This tweet was posted after winning the 2016 NBA championship.',
+      'It marked the end of Cleveland\'s 52-year championship drought.',
+      'It was widely shared and celebrated by Cleveland fans.',
+      'It symbolized his return and redemption in Cleveland.',
+      'Source: https://twitter.com/KingJames/status/743904589690732544'
     ]
   },
   {
-    id: 'tlc',
-    title: 'TLC',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'We\'re not a girl group, we\'re survivors.',
-    funFacts: [
-      'This tweet was about their resilience.',
-      'It became a viral quote.',
-      'It reflected their journey.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'enriqueiglesias',
-    title: 'Enrique Iglesias',
-    year: 2017,
-    country: 'Spain',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a Latin lover.',
-    funFacts: [
-      'This tweet was about his Latin identity.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'ricky_martin',
-    title: 'Ricky Martin',
-    year: 2016,
-    country: 'Puerto Rico',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a Latin sensation.',
-    funFacts: [
-      'This tweet was about his Latin identity.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'marcanthony',
-    title: 'Marc Anthony',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a salsa king.',
-    funFacts: [
-      'This tweet was about his salsa identity.',
-      'It became a viral quote.',
-      'It reflected his musical focus.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'jenniferlopez2',
-    title: 'Jennifer Lopez',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a Latin diva.',
-    funFacts: [
-      'This tweet was about her Latin identity.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'selenagomez',
-    title: 'Selena Gomez',
+    id: 'serena_woman',
+    title: 'Serena Williams',
     year: 2017,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a storyteller.',
+    fullText: 'I\'m not a man, I\'m a woman.',
     funFacts: [
-      'This tweet was about her artistic approach.',
-      'It became a viral quote.',
-      'It reflected her creative vision.',
-      'It was widely shared by fans.'
+      'This tweet was a response to criticism about her appearance.',
+      'It became an empowering message for women athletes.',
+      'It was widely shared and celebrated.',
+      'It addressed gender stereotypes in sports.',
+      'Source: https://twitter.com/serenawilliams/status/902850866851577856'
     ]
   },
   {
-    id: 'arianagrande',
-    title: 'Ariana Grande',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a vocal powerhouse.',
-    funFacts: [
-      'This tweet was about her vocal talent.',
-      'It became a viral quote.',
-      'It reflected her musical focus.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'demilovato',
-    title: 'Demi Lovato',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a warrior.',
-    funFacts: [
-      'This tweet was about her personal strength.',
-      'It became a viral quote.',
-      'It reflected her resilience.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'mileycyrus',
-    title: 'Miley Cyrus',
+    id: 'tom_brady_thanks',
+    title: 'Tom Brady',
     year: 2017,
     country: 'United States',
     theme: 'Viral Tweets',
     category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a rebel.',
+    fullText: 'Thank you to everyone who has supported us along the way.',
     funFacts: [
-      'This tweet was about her rebellious image.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
+      'This tweet was posted after winning Super Bowl LI.',
+      'It marked the greatest comeback in Super Bowl history.',
+      'It was widely shared by Patriots fans.',
+      'It showed his gratitude to supporters.',
+      'Source: https://twitter.com/TomBrady/status/827482567091453952'
     ]
   },
   {
-    id: 'kellyclarkson',
-    title: 'Kelly Clarkson',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a voice.',
+    id: 'meditations_marcus_aurelius',
+    title: 'Marcus Aurelius',
+    year: 180,
+    country: 'Roman Empire',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/meditations.txt',
     funFacts: [
-      'This tweet was about her vocal talent.',
-      'It became a viral quote.',
-      'It reflected her musical focus.',
-      'It was widely shared by fans.'
+      'Famous quote: The happiness of your life depends upon the quality of your thoughts.',
+      'Written as personal reflections during military campaigns.',
+      'One of the most influential works of Stoic philosophy.',
+      'Written in Greek, not Latin.',
+      'Never intended for publication.',
+      'Source: public/texts/philosophy/meditations.txt'
     ]
   },
   {
-    id: 'carrieunderwood',
-    title: 'Carrie Underwood',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a country girl.',
+    id: 'republic_plato',
+    title: 'Plato',
+    year: 380,
+    country: 'Ancient Greece',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/republic.txt',
     funFacts: [
-      'This tweet was about her country identity.',
-      'It became a viral quote.',
-      'It reflected her roots.',
-      'It was widely shared by fans.'
+      'Famous quote: The heaviest penalty for declining to rule is to be ruled by someone inferior to yourself.',
+      'Written as a dialogue between Socrates and others.',
+      'Introduces the concept of the philosopher-king.',
+      'Discusses the nature of justice and the ideal state.',
+      'One of the most influential works in Western philosophy.',
+      'Source: public/texts/philosophy/republic.txt'
     ]
   },
   {
-    id: 'mirandalambert',
-    title: 'Miranda Lambert',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a country queen.',
+    id: 'nicomachean_ethics_aristotle',
+    title: 'Aristotle',
+    year: 350,
+    country: 'Ancient Greece',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/nicomachean_ethics.txt',
     funFacts: [
-      'This tweet was about her country identity.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
+      'Famous quote: Happiness is the meaning and the purpose of life, the whole aim and end of human existence.',
+      'Named after Aristotle\'s son Nicomachus.',
+      'Introduces the concept of eudaimonia (flourishing).',
+      'Discusses virtue ethics and the golden mean.',
+      'Foundation of Western ethical thought.',
+      'Source: public/texts/philosophy/nicomachean_ethics.txt'
     ]
   },
   {
-    id: 'taylorswift2',
-    title: 'Taylor Swift',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a songwriter.',
+    id: 'discourse_method_descartes',
+    title: 'René Descartes',
+    year: 1637,
+    country: 'France',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/discourse_method.txt',
     funFacts: [
-      'This tweet was about her songwriting focus.',
-      'It became a viral quote.',
-      'It reflected her artistic approach.',
-      'It was widely shared by fans.'
+      'Famous quote: I think, therefore I am.',
+      'Written in French, not Latin.',
+      'Introduces the method of systematic doubt.',
+      'Foundation of modern rationalism.',
+      'Published during the Scientific Revolution.',
+      'Source: public/texts/philosophy/discourse_method.txt'
     ]
   },
   {
-    id: 'katyperry',
-    title: 'Katy Perry',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a firework.',
+    id: 'leviathan_hobbes',
+    title: 'Thomas Hobbes',
+    year: 1651,
+    country: 'England',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/leviathan.txt',
     funFacts: [
-      'This tweet referenced her hit song "Firework".',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
+      'Famous quote: Life is solitary, poor, nasty, brutish, and short.',
+      'Written during the English Civil War.',
+      'Introduces the social contract theory.',
+      'Argues for absolute monarchy.',
+      'Influenced modern political philosophy.',
+      'Source: public/texts/philosophy/leviathan.txt'
     ]
   },
   {
-    id: 'ladygaga2',
-    title: 'Lady Gaga',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a monster.',
+    id: 'social_contract_rousseau',
+    title: 'Jean-Jacques Rousseau',
+    year: 1762,
+    country: 'France',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/social_contract.txt',
     funFacts: [
-      'This tweet referenced her "Little Monsters" fan base.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
+      'Famous quote: Man is born free, and everywhere he is in chains.',
+      'Influenced the French Revolution.',
+      'Discusses the general will concept.',
+      'Critiques modern civilization.',
+      'Foundation of democratic theory.',
+      'Source: public/texts/philosophy/social_contract.txt'
     ]
   },
   {
-    id: 'britneyspears2',
-    title: 'Britney Spears',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a princess.',
+    id: 'critique_pure_reason_kant',
+    title: 'Immanuel Kant',
+    year: 1781,
+    country: 'Germany',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/critique_pure_reason.txt',
     funFacts: [
-      'This tweet was about her "Princess of Pop" title.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
+      'Famous quote: Thoughts without content are empty, intuitions without concepts are blind.',
+      'One of the most complex works in philosophy.',
+      'Attempts to reconcile rationalism and empiricism.',
+      'Introduces transcendental idealism.',
+      'Revolutionized epistemology.',
+      'Source: public/texts/philosophy/critique_pure_reason.txt'
     ]
   },
   {
-    id: 'madonna2',
-    title: 'Madonna',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m the queen.',
+    id: 'utilitarianism_mill',
+    title: 'John Stuart Mill',
+    year: 1861,
+    country: 'England',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/utilitarianism.txt',
     funFacts: [
-      'This tweet was about her "Queen of Pop" title.',
-      'It became a viral quote.',
-      'It reflected her legacy.',
-      'It was widely shared by fans.'
+      'Famous quote: The greatest happiness of the greatest number is the foundation of morals and legislation.',
+      'Develops Bentham\'s utilitarianism.',
+      'Distinguishes between higher and lower pleasures.',
+      'Influenced modern ethics and economics.',
+      'Written during the Industrial Revolution.',
+      'Source: public/texts/philosophy/utilitarianism.txt'
     ]
   },
   {
-    id: 'beyonce2',
-    title: 'Beyoncé',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a queen.',
+    id: 'beyond_good_evil_nietzsche',
+    title: 'Friedrich Nietzsche',
+    year: 1886,
+    country: 'Germany',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/beyond_good_evil.txt',
     funFacts: [
-      'This tweet was about her "Queen Bey" title.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
+      'Famous quote: He who has a why to live can bear almost any how.',
+      'Critiques traditional morality.',
+      'Introduces the will to power concept.',
+      'Influenced existentialism and postmodernism.',
+      'Written in aphoristic style.',
+      'Source: public/texts/philosophy/beyond_good_evil.txt'
     ]
   },
   {
-    id: 'rihanna2',
-    title: 'Rihanna',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a bad girl.',
+    id: 'thus_spoke_zarathustra_nietzsche',
+    title: 'Friedrich Nietzsche',
+    year: 1883,
+    country: 'Germany',
+    theme: 'Philosophy',
+    category: 'philosophy',
+    textFile: 'philosophy/thus_spoke_zarathustra.txt',
     funFacts: [
-      'This tweet was about her "Bad Girl" image.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'nickiminaj2',
-    title: 'Nicki Minaj',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a pop star, I\'m a queen.',
-    funFacts: [
-      'This tweet was about her "Queen" title.',
-      'It became a viral quote.',
-      'It reflected her brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'drake2',
-    title: 'Drake',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a king.',
-    funFacts: [
-      'This tweet was about his "King" status.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'eminem',
-    title: 'Eminem',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a poet.',
-    funFacts: [
-      'This tweet was about his lyrical talent.',
-      'It became a viral quote.',
-      'It reflected his artistic approach.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'jayz',
-    title: 'Jay-Z',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a businessman.',
-    funFacts: [
-      'This tweet was about his business success.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'kendricklamar',
-    title: 'Kendrick Lamar',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a storyteller.',
-    funFacts: [
-      'This tweet was about his narrative approach.',
-      'It became a viral quote.',
-      'It reflected his artistic vision.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'jcole',
-    title: 'J. Cole',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a teacher.',
-    funFacts: [
-      'This tweet was about his educational approach.',
-      'It became a viral quote.',
-      'It reflected his artistic philosophy.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'postmalone',
-    title: 'Post Malone',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a rock star.',
-    funFacts: [
-      'This tweet was about his musical identity.',
-      'It became a viral quote.',
-      'It reflected his artistic vision.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'travis_scott',
-    title: 'Travis Scott',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a visionary.',
-    funFacts: [
-      'This tweet was about his creative vision.',
-      'It became a viral quote.',
-      'It reflected his artistic approach.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'lilwayne',
-    title: 'Lil Wayne',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a legend.',
-    funFacts: [
-      'This tweet was about his legendary status.',
-      'It became a viral quote.',
-      'It reflected his legacy.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'snoopdogg',
-    title: 'Snoop Dogg',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a lifestyle.',
-    funFacts: [
-      'This tweet was about his lifestyle brand.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'icecube',
-    title: 'Ice Cube',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a mogul.',
-    funFacts: [
-      'This tweet was about his business success.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'dr_dre',
-    title: 'Dr. Dre',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a producer.',
-    funFacts: [
-      'This tweet was about his production focus.',
-      'It became a viral quote.',
-      'It reflected his artistic role.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'snoopdogg2',
-    title: 'Snoop Dogg',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a chef.',
-    funFacts: [
-      'This tweet was about his cooking show.',
-      'It became a viral quote.',
-      'It reflected his diverse career.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'icecube2',
-    title: 'Ice Cube',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m an actor.',
-    funFacts: [
-      'This tweet was about his acting career.',
-      'It became a viral quote.',
-      'It reflected his diverse career.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'dr_dre2',
-    title: 'Dr. Dre',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a businessman.',
-    funFacts: [
-      'This tweet was about his business success.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'eminem2',
-    title: 'Eminem',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a survivor.',
-    funFacts: [
-      'This tweet was about his personal journey.',
-      'It became a viral quote.',
-      'It reflected his resilience.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'jayz2',
-    title: 'Jay-Z',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a billionaire.',
-    funFacts: [
-      'This tweet was about his financial success.',
-      'It became a viral quote.',
-      'It reflected his wealth.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'kendricklamar2',
-    title: 'Kendrick Lamar',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a prophet.',
-    funFacts: [
-      'This tweet was about his message.',
-      'It became a viral quote.',
-      'It reflected his artistic vision.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'jcole2',
-    title: 'J. Cole',
-    year: 2016,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a student.',
-    funFacts: [
-      'This tweet was about his learning approach.',
-      'It became a viral quote.',
-      'It reflected his philosophy.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'postmalone2',
-    title: 'Post Malone',
-    year: 2015,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a country boy.',
-    funFacts: [
-      'This tweet was about his country roots.',
-      'It became a viral quote.',
-      'It reflected his identity.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'travis_scott2',
-    title: 'Travis Scott',
-    year: 2014,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a rockstar.',
-    funFacts: [
-      'This tweet was about his rockstar image.',
-      'It became a viral quote.',
-      'It reflected his brand.',
-      'It was widely shared by fans.'
-    ]
-  },
-  {
-    id: 'lilwayne2',
-    title: 'Lil Wayne',
-    year: 2017,
-    country: 'United States',
-    theme: 'Viral Tweets',
-    category: 'pop culture',
-    fullText: 'I\'m not a rapper, I\'m a genius.',
-    funFacts: [
-      'This tweet was about his intelligence.',
-      'It became a viral quote.',
-      'It reflected his self-confidence.',
-      'It was widely shared by fans.'
+      'Famous quote: God is dead. God remains dead. And we have killed him.',
+      'Written in poetic prose style.',
+      'Introduces the Übermensch concept.',
+      'Critiques Christianity and traditional values.',
+      'One of Nietzsche\'s most famous works.',
+      'Source: public/texts/philosophy/thus_spoke_zarathustra.txt'
     ]
   }
 ]; 

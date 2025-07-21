@@ -19,6 +19,7 @@ const CATEGORIES = [
   { value: 'history', label: 'History Documents' },
   { value: 'classic literature', label: 'Classic Literature' },
   { value: 'pop culture', label: 'Pop Culture' },
+  { value: 'philosophy', label: 'Philosophy' },
 ];
 
 export default function Home({ onStart }) {

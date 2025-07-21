@@ -53,6 +53,22 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
       justinBieberBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Justin Bieber biography
       kimKardashianBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Kim Kardashian book
       ellenBook: 'https://amazon.com/dp/1501139165?tag=tjw126-20', // Ellen DeGeneres book
+      // Philosophy books
+      meditations: 'https://amazon.com/dp/0812968255?tag=tjw126-20', // Marcus Aurelius Meditations
+      republic: 'https://amazon.com/dp/0872201368?tag=tjw126-20', // Plato Republic
+      nicomacheanEthics: 'https://amazon.com/dp/0872204642?tag=tjw126-20', // Aristotle Nicomachean Ethics
+      discourseMethod: 'https://amazon.com/dp/0872204200?tag=tjw126-20', // Descartes Discourse on Method
+      leviathan: 'https://amazon.com/dp/0872201783?tag=tjw126-20', // Hobbes Leviathan
+      socialContract: 'https://amazon.com/dp/0872203565?tag=tjw126-20', // Rousseau Social Contract
+      critiquePureReason: 'https://amazon.com/dp/0872202577?tag=tjw126-20', // Kant Critique of Pure Reason
+      utilitarianism: 'https://amazon.com/dp/087220605X?tag=tjw126-20', // Mill Utilitarianism
+      beyondGoodEvil: 'https://amazon.com/dp/0679724656?tag=tjw126-20', // Nietzsche Beyond Good and Evil
+      zarathustra: 'https://amazon.com/dp/0679724656?tag=tjw126-20', // Nietzsche Thus Spoke Zarathustra
+      // Philosophy study guides
+      philosophyIntro: 'https://amazon.com/dp/0195153715?tag=tjw126-20', // Introduction to Philosophy
+      westernPhilosophy: 'https://amazon.com/dp/0195153715?tag=tjw126-20', // History of Western Philosophy
+      ethicsTextbook: 'https://amazon.com/dp/0195153715?tag=tjw126-20', // Ethics textbook
+      politicalPhilosophy: 'https://amazon.com/dp/0195153715?tag=tjw126-20', // Political Philosophy
     },
     // Audible links
     audible: {
@@ -71,6 +87,9 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
       writing: 'https://coursera.org/learn/creative-writing?affiliate=YOUR_AFFILIATE_ID',
       government: 'https://coursera.org/learn/american-government?affiliate=YOUR_AFFILIATE_ID',
       constitutional: 'https://coursera.org/learn/constitutional-law?affiliate=YOUR_AFFILIATE_ID',
+      philosophy: 'https://coursera.org/learn/philosophy?affiliate=YOUR_AFFILIATE_ID',
+      ethics: 'https://coursera.org/learn/ethics?affiliate=YOUR_AFFILIATE_ID',
+      politicalPhilosophy: 'https://coursera.org/learn/political-philosophy?affiliate=YOUR_AFFILIATE_ID',
     }
   };
 
@@ -179,6 +198,104 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
         });
       }
 
+      // Add philosophy-specific recommendations
+      if (documentId === 'meditations_marcus_aurelius') {
+        recommendations.push({
+          title: 'Meditations by Marcus Aurelius',
+          description: 'The complete collection of Stoic wisdom from the Roman emperor.',
+          link: AFFILIATE_LINKS.amazon.meditations,
+          type: 'book',
+          icon: '🧘'
+        });
+      }
+
+      if (documentId === 'republic_plato') {
+        recommendations.push({
+          title: 'The Republic by Plato',
+          description: 'The complete dialogue on justice and the ideal state.',
+          link: AFFILIATE_LINKS.amazon.republic,
+          type: 'book',
+          icon: '🏛️'
+        });
+      }
+
+      if (documentId === 'nicomachean_ethics_aristotle') {
+        recommendations.push({
+          title: 'Nicomachean Ethics by Aristotle',
+          description: 'The complete work on virtue ethics and human flourishing.',
+          link: AFFILIATE_LINKS.amazon.nicomacheanEthics,
+          type: 'book',
+          icon: '⚖️'
+        });
+      }
+
+      if (documentId === 'discourse_method_descartes') {
+        recommendations.push({
+          title: 'Discourse on Method by René Descartes',
+          description: 'The foundation of modern rationalism and scientific method.',
+          link: AFFILIATE_LINKS.amazon.discourseMethod,
+          type: 'book',
+          icon: '🧠'
+        });
+      }
+
+      if (documentId === 'leviathan_hobbes') {
+        recommendations.push({
+          title: 'Leviathan by Thomas Hobbes',
+          description: 'The complete work on political philosophy and social contract theory.',
+          link: AFFILIATE_LINKS.amazon.leviathan,
+          type: 'book',
+          icon: '👑'
+        });
+      }
+
+      if (documentId === 'social_contract_rousseau') {
+        recommendations.push({
+          title: 'The Social Contract by Jean-Jacques Rousseau',
+          description: 'The complete work on democracy and the general will.',
+          link: AFFILIATE_LINKS.amazon.socialContract,
+          type: 'book',
+          icon: '🤝'
+        });
+      }
+
+      if (documentId === 'critique_pure_reason_kant') {
+        recommendations.push({
+          title: 'Critique of Pure Reason by Immanuel Kant',
+          description: 'The complete work on transcendental idealism and epistemology.',
+          link: AFFILIATE_LINKS.amazon.critiquePureReason,
+          type: 'book',
+          icon: '🔍'
+        });
+      }
+
+      if (documentId === 'utilitarianism_mill') {
+        recommendations.push({
+          title: 'Utilitarianism by John Stuart Mill',
+          description: 'The complete work on the greatest happiness principle.',
+          link: AFFILIATE_LINKS.amazon.utilitarianism,
+          type: 'book',
+          icon: '😊'
+        });
+      }
+
+      if (documentId === 'beyond_good_evil_nietzsche' || documentId === 'thus_spoke_zarathustra_nietzsche') {
+        recommendations.push({
+          title: 'Beyond Good and Evil by Friedrich Nietzsche',
+          description: 'The complete work on morality and the will to power.',
+          link: AFFILIATE_LINKS.amazon.beyondGoodEvil,
+          type: 'book',
+          icon: '⚡'
+        });
+        recommendations.push({
+          title: 'Thus Spoke Zarathustra by Friedrich Nietzsche',
+          description: 'The complete poetic work on the Übermensch and eternal recurrence.',
+          link: AFFILIATE_LINKS.amazon.zarathustra,
+          type: 'book',
+          icon: '🌅'
+        });
+      }
+
       if (documentId === 'monroe') {
         recommendations.push({
           title: 'The Monroe Doctrine: America\'s Foreign Policy',
@@ -255,7 +372,59 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
 
     // General recommendations based on type
     switch (type) {
-            case 'history':
+      case 'philosophy':
+        return [
+          {
+            title: 'Introduction to Philosophy Course',
+            description: 'Learn the fundamentals of philosophical thinking and major schools of thought.',
+            link: AFFILIATE_LINKS.coursera.philosophy,
+            type: 'course',
+            icon: '🧠'
+          },
+          {
+            title: 'Ethics and Moral Philosophy Course',
+            description: 'Explore ethical theories and moral reasoning.',
+            link: AFFILIATE_LINKS.coursera.ethics,
+            type: 'course',
+            icon: '⚖️'
+          },
+          {
+            title: 'Political Philosophy Course',
+            description: 'Study the philosophical foundations of political systems and governance.',
+            link: AFFILIATE_LINKS.coursera.politicalPhilosophy,
+            type: 'course',
+            icon: '🏛️'
+          },
+          {
+            title: 'Introduction to Philosophy Textbook',
+            description: 'Comprehensive guide to philosophical concepts and thinkers.',
+            link: AFFILIATE_LINKS.amazon.philosophyIntro,
+            type: 'book',
+            icon: '📚'
+          },
+          {
+            title: 'History of Western Philosophy',
+            description: 'Journey through the development of Western philosophical thought.',
+            link: AFFILIATE_LINKS.amazon.westernPhilosophy,
+            type: 'book',
+            icon: '📖'
+          },
+          {
+            title: 'Ethics: An Introduction',
+            description: 'Essential textbook for understanding moral philosophy.',
+            link: AFFILIATE_LINKS.amazon.ethicsTextbook,
+            type: 'book',
+            icon: '⚖️'
+          },
+          {
+            title: 'Political Philosophy: A Beginner\'s Guide',
+            description: 'Understand the philosophical foundations of political systems.',
+            link: AFFILIATE_LINKS.amazon.politicalPhilosophy,
+            type: 'book',
+            icon: '🏛️'
+          }
+        ];
+      case 'history':
         return [
           {
             title: 'American History Course',
