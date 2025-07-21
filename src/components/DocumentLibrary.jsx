@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { documents } from '../data/documents.js';
 import AffiliateRecommendations from './AffiliateRecommendations.jsx';
 
@@ -20,6 +20,13 @@ export default function DocumentLibrary({ onBack }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState({});
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
 
   // Group documents by category
   const docsByCategory = documents.reduce((acc, doc) => {
@@ -54,7 +61,7 @@ export default function DocumentLibrary({ onBack }) {
   };
 
   return (
-    <div className="library-container" style={{ display: 'flex', minHeight: 600 }}>
+    <div ref={containerRef} className="library-container" style={{ display: 'flex', minHeight: 600 }}>
       {/* Left pane: categories and document list */}
       <div className="library-sidebar" style={{ width: 340, borderRight: '1px solid #e1e8ed', padding: '2rem 1.5rem 2rem 2rem', background: '#f8f9fa' }}>
         <h2 style={{ marginTop: 0, color: '#2c3e50' }}>Archivist's Library</h2>

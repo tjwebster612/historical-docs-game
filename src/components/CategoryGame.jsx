@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { documents } from '../data/documents.js';
 import avatar1 from '../assets/avatars/avatar1.jpg';
 import avatar2 from '../assets/avatars/avatar2.jpg';
@@ -41,7 +41,8 @@ const PLAYER_COLORS = [
 const CATEGORIES = [
   { id: 'history', name: 'History', icon: '🏛️', color: '#4F8EF7' },
   { id: 'classic literature', name: 'Classic Literature', icon: '📚', color: '#F76E4F' },
-  { id: 'pop culture', name: 'Pop Culture', icon: '📱', color: '#4FF7A1' }
+  { id: 'pop culture', name: 'Pop Culture', icon: '��', color: '#4FF7A1' },
+  { id: 'philosophy', name: 'Philosophy', icon: '🤔', color: '#B14FF7' },
 ];
 
 async function getDocText(doc) {
@@ -72,10 +73,10 @@ function splitSentences(text) {
 }
 
 const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
-  const isMulti = !!playerInfo;
-  const numPlayers = isMulti ? playerInfo.numPlayers : 1;
-  const playerNames = isMulti ? playerInfo.playerNames : ['You'];
-  const playerAvatars = isMulti ? playerInfo.playerAvatars : [];
+  const isMulti = playerInfo && playerInfo.numPlayers > 1;
+  const numPlayers = playerInfo ? playerInfo.numPlayers : 1;
+  const playerNames = playerInfo ? playerInfo.playerNames : ['You'];
+  const playerAvatars = playerInfo ? playerInfo.playerAvatars : [];
   const totalQuestions = isMulti ? numPlayers * QUESTIONS_PER_PLAYER : NUM_QUESTIONS;
 
   const [questions, setQuestions] = useState([]); // [{doc, choices, excerpt, playerIdx}]
@@ -86,6 +87,27 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [scores, setScores] = useState(Array(numPlayers).fill(0));
+
+  const containerRef = useRef(null);
+  const feedbackRef = useRef(null);
+
+  useEffect(() => {
+    if (showFeedback && feedbackRef.current) {
+      feedbackRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [showFeedback]);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []); // On mount
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [current]);
 
   useEffect(() => {
     let isMounted = true;
@@ -180,6 +202,39 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
   if (error) return <div style={{ color: 'red' }}>{error}</div>;
   if (!questions.length) return <div>No questions available.</div>;
 
+  // Defensive: if current index is out of bounds, end the game gracefully
+  if (current >= questions.length) {
+    // Compute per-player attempts and scores
+    const perPlayerAttempts = Array(numPlayers).fill(0).map(() => []);
+    attempts.forEach(a => {
+      perPlayerAttempts[a.playerIdx].push(a);
+    });
+    const finalScores = Array(numPlayers).fill(0);
+    attempts.forEach(a => {
+      if (a.correct) finalScores[a.playerIdx] += 1;
+    });
+    // Aggregate attempts by category
+    const categoryStats = {};
+    attempts.forEach(a => {
+      const q = questions.find(q => q.questionId === a.questionId);
+      const cat = q?.doc.category;
+      if (!cat) return;
+      if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, total: 0 };
+      categoryStats[cat].total += 1;
+      if (a.correct) categoryStats[cat].correct += 1;
+    });
+    onEnd({
+      scores: finalScores,
+      total: totalQuestions,
+      attempts: perPlayerAttempts,
+      playerNames,
+      playerAvatars: isMulti ? playerAvatars : undefined,
+      mode: 'category',
+      categoryStats,
+    });
+    return null;
+  }
+
   const { doc: currentDoc, choices, excerpt, playerIdx } = questions[current];
   const currentPlayerIdx = isMulti ? playerIdx : 0;
   const currentPlayer = playerNames[currentPlayerIdx];
@@ -242,6 +297,16 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
       allAttempts.forEach(a => {
         if (a.correct) finalScores[a.playerIdx] += 1;
       });
+      // Aggregate attempts by category
+      const categoryStats = {};
+      allAttempts.forEach(a => {
+        const q = questions.find(q => q.questionId === a.questionId);
+        const cat = q?.doc.category;
+        if (!cat) return;
+        if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, total: 0 };
+        categoryStats[cat].total += 1;
+        if (a.correct) categoryStats[cat].correct += 1;
+      });
       onEnd({
         scores: finalScores,
         total: totalQuestions,
@@ -249,6 +314,7 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
         playerNames,
         playerAvatars: isMulti ? playerAvatars : undefined,
         mode: 'category',
+        categoryStats,
       });
     } else {
       setCurrent(c => c + 1);
@@ -258,7 +324,7 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
   };
 
   return (
-    <div className="game-container">
+    <div className="game-container" ref={containerRef}>
       {/* Progress indicator */}
       <div className="progress-bar">
         {Array.from({ length: totalQuestions }, (_, i) => (
@@ -327,7 +393,7 @@ const CategoryGame = ({ onEnd, difficulty = 'easy', playerInfo }) => {
       </div>
       
       {showFeedback && (
-        <div className={`feedback-section ${selected === currentDoc.category ? 'feedback-correct' : 'feedback-incorrect'}`}>
+        <div ref={feedbackRef} className={`feedback-section ${selected === currentDoc.category ? 'feedback-correct' : 'feedback-incorrect'}`}>
           {selected === currentDoc.category ? (
             <span style={{ fontWeight: '600' }}>✓ Correct! This is {CATEGORIES.find(c => c.id === currentDoc.category)?.name}.</span>
           ) : (

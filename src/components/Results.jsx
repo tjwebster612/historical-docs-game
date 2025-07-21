@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { documents } from '../data/documents.js';
 import avatar1 from '../assets/avatars/avatar1.jpg';
 import avatar2 from '../assets/avatars/avatar2.jpg';
@@ -18,11 +18,56 @@ const AVATARS = {
 };
 
 const Results = ({ results, onRestart, onHome }) => {
+  // Debug output
+  console.log('Results object:', results);
+  if (results) {
+    console.log('Results keys:', Object.keys(results));
+  }
+
   const [openDoc, setOpenDoc] = useState(null);
   const [docText, setDocText] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const containerRef = useRef(null);
+  // Removed: const feedbackRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []); // Only run on mount
+
   if (!results) return null;
+
+  // Move category mode block here to guarantee early return
+  if (results.mode === 'category' && results.categoryStats) {
+    console.log('Rendering category mode results');
+    return (
+      <div ref={containerRef} className="card" style={{ maxWidth: 800, margin: '0 auto' }}>
+        <div className="app-header">
+          <h1 className="app-title">Category Knowledge Results</h1>
+        </div>
+        <div style={{ margin: '2rem 0' }}>
+          <h3>Category Knowledge</h3>
+          {Object.entries(results.categoryStats).map(([cat, stat]) => (
+            <div key={cat} style={{ marginBottom: '1rem' }}>
+              <strong>{cat.charAt(0).toUpperCase() + cat.slice(1)}:</strong>
+              {stat.correct === stat.total
+                ? " You know this category!"
+                : stat.correct === 0
+                  ? " You don't know this category."
+                  : " Partial knowledge."}
+              ({stat.correct} / {stat.total} correct)
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <button onClick={onRestart} className="primary" style={{ marginRight: '1rem' }}>Play Again</button>
+          <button onClick={onHome}>Return Home</button>
+        </div>
+      </div>
+    );
+  }
 
   const handleOpen = async (doc) => {
     setOpenDoc(doc);
@@ -59,6 +104,7 @@ const Results = ({ results, onRestart, onHome }) => {
   // Multiplayer Results
   const isMulti = Array.isArray(results.scores) && results.playerNames;
   if (isMulti) {
+    console.log('Rendering multiplayer results');
     const { scores, total, attempts, playerNames, playerAvatars } = results;
     const QUESTIONS_PER_PLAYER = attempts[0]?.length || 0;
     // Find winner(s)
@@ -222,6 +268,7 @@ const Results = ({ results, onRestart, onHome }) => {
   }
 
   // Single Player Results
+  console.log('Rendering single player results');
   const { score, total, attempts, questions } = results;
   // Aggregate per-document stats
   const docStats = {};
@@ -240,7 +287,7 @@ const Results = ({ results, onRestart, onHome }) => {
   const getDoc = (id) => questions.find(q => q.id === id);
 
   return (
-    <div className="card" style={{ maxWidth: 800, margin: '0 auto' }}>
+    <div ref={containerRef} className="card" style={{ maxWidth: 800, margin: '0 auto' }}>
       <div className="app-header">
         <h1 className="app-title">Results</h1>
         <p className="app-subtitle">Your score: {score} / {total}</p>
