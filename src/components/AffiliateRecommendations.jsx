@@ -24,25 +24,47 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
       foundingDocs: 'https://amazon.com/dp/0451528815?tag=tjw126-20',
       classicCollection: 'https://amazon.com/dp/0142437247?tag=tjw126-20',
       literatureGuide: 'https://amazon.com/dp/0743273567?tag=tjw126-20',
+      // Historical biographies and accounts
+      washingtonBio: 'https://amazon.com/dp/0143119966?tag=tjw126-20', // Washington biography
+      jeffersonBio: 'https://amazon.com/dp/0812979486?tag=tjw126-20', // Jefferson biography
+      madisonBio: 'https://amazon.com/dp/0812979095?tag=tjw126-20', // Madison biography
+      lincolnBio: 'https://amazon.com/dp/0743270754?tag=tjw126-20', // Lincoln biography
+      americanRevolution: 'https://amazon.com/dp/014312398X?tag=tjw126-20', // American Revolution history
+      civilWar: 'https://amazon.com/dp/0394749138?tag=tjw126-20', // Civil War history
+      foundingFathers: 'https://amazon.com/dp/0812970411?tag=tjw126-20', // Founding Fathers book
+      constitutionalHistory: 'https://amazon.com/dp/0195304438?tag=tjw126-20', // Constitutional history
+      monroeDoctrine: 'https://amazon.com/dp/0199765925?tag=tjw126-20', // Monroe Doctrine history
+      gettysburgHistory: 'https://amazon.com/dp/0743273206?tag=tjw126-20', // Gettysburg history
+      emancipationHistory: 'https://amazon.com/dp/0393062381?tag=tjw126-20', // Emancipation history
+      // Historical study guides
+      apushGuide: 'https://amazon.com/dp/1506262085?tag=tjw126-20', // AP US History guide
+      americanHistory: 'https://amazon.com/dp/0393602205?tag=tjw126-20', // American history textbook
+      governmentTextbook: 'https://amazon.com/dp/0134162077?tag=tjw126-20', // Government textbook
     },
     // Audible links
     audible: {
       gatsby: 'https://audible.com/pd/The-Great-Gatsby-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
       mobydick: 'https://audible.com/pd/Moby-Dick-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
       frankenstein: 'https://audible.com/pd/Frankenstein-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
+      // Historical audiobooks
+      washingtonBio: 'https://audible.com/pd/His-Excellency-George-Washington-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
+      lincolnBio: 'https://audible.com/pd/Team-of-Rivals-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
+      americanRevolution: 'https://audible.com/pd/American-Revolution-Audiobook?asin=B002V5BQOQ&tag=tjw126-20',
     },
     // Coursera links
     coursera: {
       history: 'https://coursera.org/learn/american-history?affiliate=YOUR_AFFILIATE_ID',
       literature: 'https://coursera.org/learn/literature?affiliate=YOUR_AFFILIATE_ID',
       writing: 'https://coursera.org/learn/creative-writing?affiliate=YOUR_AFFILIATE_ID',
+      government: 'https://coursera.org/learn/american-government?affiliate=YOUR_AFFILIATE_ID',
+      constitutional: 'https://coursera.org/learn/constitutional-law?affiliate=YOUR_AFFILIATE_ID',
     }
   };
 
   const getRecommendations = () => {
     if (documentId && AFFILIATE_LINKS.amazon[documentId]) {
       // Document-specific recommendations
-      return [
+      const recommendations = [
         {
           title: `Read the full "${getDocumentTitle(documentId)}"`,
           description: `Get the complete book to dive deeper into this classic work.`,
@@ -51,11 +73,115 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
           icon: '📖'
         }
       ];
+
+      // Add historical context books for historical documents
+      if (documentId === 'constitution' || documentId === 'declaration' || documentId === 'federalist10') {
+        recommendations.push({
+          title: 'The Founding Fathers: A Comprehensive Biography',
+          description: 'Learn about the lives and contributions of America\'s founding fathers.',
+          link: AFFILIATE_LINKS.amazon.foundingFathers,
+          type: 'book',
+          icon: '👥'
+        });
+      }
+
+      // Add specific biographies for key figures
+      if (documentId === 'constitution' || documentId === 'federalist10') {
+        recommendations.push({
+          title: 'James Madison: A Biography',
+          description: 'The life and legacy of the "Father of the Constitution."',
+          link: AFFILIATE_LINKS.amazon.madisonBio,
+          type: 'book',
+          icon: '👤'
+        });
+      }
+
+      if (documentId === 'declaration') {
+        recommendations.push({
+          title: 'Thomas Jefferson: A Biography',
+          description: 'Explore the life of the Declaration\'s principal author.',
+          link: AFFILIATE_LINKS.amazon.jeffersonBio,
+          type: 'book',
+          icon: '👤'
+        });
+      }
+
+      if (documentId === 'gettysburg' || documentId === 'emancipation') {
+        recommendations.push({
+          title: 'Abraham Lincoln: A Biography',
+          description: 'The definitive biography of America\'s greatest president.',
+          link: AFFILIATE_LINKS.amazon.lincolnBio,
+          type: 'book',
+          icon: '👤'
+        });
+      }
+
+      if (documentId === 'constitution') {
+        recommendations.push({
+          title: 'Constitutional History: From Ratification to Today',
+          description: 'Explore the fascinating history of the U.S. Constitution.',
+          link: AFFILIATE_LINKS.amazon.constitutionalHistory,
+          type: 'book',
+          icon: '📜'
+        });
+      }
+
+      if (documentId === 'declaration') {
+        recommendations.push({
+          title: 'The American Revolution: A Complete History',
+          description: 'Dive deep into the revolutionary period that led to independence.',
+          link: AFFILIATE_LINKS.amazon.americanRevolution,
+          type: 'book',
+          icon: '🎖️'
+        });
+      }
+
+      if (documentId === 'gettysburg' || documentId === 'emancipation') {
+        recommendations.push({
+          title: 'The Civil War: A Comprehensive History',
+          description: 'Understand the full context of the Civil War era.',
+          link: AFFILIATE_LINKS.amazon.civilWar,
+          type: 'book',
+          icon: '⚔️'
+        });
+      }
+
+      if (documentId === 'gettysburg') {
+        recommendations.push({
+          title: 'Gettysburg: The Battle and Its Impact',
+          description: 'Explore the pivotal battle that changed the course of the war.',
+          link: AFFILIATE_LINKS.amazon.gettysburgHistory,
+          type: 'book',
+          icon: '🏛️'
+        });
+      }
+
+      if (documentId === 'emancipation') {
+        recommendations.push({
+          title: 'Emancipation: The Story of Freedom',
+          description: 'Learn about the journey to emancipation and its lasting impact.',
+          link: AFFILIATE_LINKS.amazon.emancipationHistory,
+          type: 'book',
+          icon: '🕊️'
+        });
+      }
+
+      if (documentId === 'monroe') {
+        recommendations.push({
+          title: 'The Monroe Doctrine: America\'s Foreign Policy',
+          description: 'Understand the origins and impact of this pivotal foreign policy.',
+          link: AFFILIATE_LINKS.amazon.monroeDoctrine,
+          type: 'book',
+          icon: '🌍'
+        });
+      }
+
+      return recommendations;
     }
 
     // General recommendations based on type
     switch (type) {
-      case 'history':
+            case 'history':
         return [
           {
             title: 'American History Course',
@@ -64,13 +190,27 @@ const AffiliateRecommendations = ({ type = 'general', documentId = null }) => {
             type: 'course',
             icon: '🎓'
           },
-                     {
-             title: 'Founding Documents Collection',
-             description: 'Get the complete collection of America\'s founding documents.',
-             link: AFFILIATE_LINKS.amazon.foundingDocs,
-             type: 'book',
-             icon: '📜'
-           }
+          {
+            title: 'AP US History Study Guide',
+            description: 'Comprehensive study guide for American history students.',
+            link: AFFILIATE_LINKS.amazon.apushGuide,
+            type: 'book',
+            icon: '📚'
+          },
+          {
+            title: 'American Government Textbook',
+            description: 'Essential textbook for understanding American government and politics.',
+            link: AFFILIATE_LINKS.amazon.governmentTextbook,
+            type: 'book',
+            icon: '🏛️'
+          },
+          {
+            title: 'The Founding Fathers Biography',
+            description: 'Learn about the lives and contributions of America\'s founding fathers.',
+            link: AFFILIATE_LINKS.amazon.foundingFathers,
+            type: 'book',
+            icon: '👥'
+          }
         ];
       
       case 'literature':
